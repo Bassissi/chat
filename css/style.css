@@ -1,0 +1,1245 @@
+body
+{
+	margin-bottom: 0px;
+}
+
+/* mon header*/
+header
+	{
+		background-image: url('../img/cat02.jpg'); 
+		background-repeat: no-repeat;
+		background-position-x: center;	
+		background-size: 80%  100%; 		
+		height: 350px; 	
+		background-color: #8B0000;
+		margin-top: -20px; 
+
+	}
+header h2
+	{
+		padding-top: 177px; 
+		font-family: 'Rubik Mono One', sans-serif;
+		background-image: url('../img/d.jpg'); 
+		background-repeat: no-repeat;
+		background-position-x: center;	
+		background-size: 20% 20%; 	
+		
+
+	}
+header h2 a
+	{
+		color: #800000;
+		text-decoration: none; 
+
+
+	}
+header  a:hover
+	{
+		
+		text-decoration: none; 
+	    
+
+	}
+nav  a:hover
+	{
+		
+		color: #8B0000;
+		background-color: white; 
+
+
+	}		
+nav 
+	{
+		font-family: 'Oswald', sans-serif;
+		font-size: 16px; 	
+		padding-top: 98px;
+		text-align: center;	
+
+	}
+
+nav a
+	{
+		padding: 5px 20px 5px 20px; 	
+		background-color: #8B0000; 
+		color: white;
+		margin-right: 8px; 
+		border-radius: 5px; 
+
+	}
+
+marquee 
+	{
+		background-color: black;   
+
+        border: 1px solid white;
+	}
+marquee a 
+	{
+		color:white; 
+		font-family: 'Oswald', sans-serif;
+		font-size: 16px; 
+
+	}
+marquee a span
+	{
+			text-transform: capitalize;
+	}
+
+
+@media (max-width: 1100px)
+{
+	header h2
+	{
+      position: absolute;
+      margin-top: 20px; 
+      padding: 5px; 
+      font-size: 14px;
+      font-family: 'Fjalla One', sans-serif;     
+      background-color: white; 
+      border-radius: 3px;
+		background-image: url('../img/d.jpg'); 
+		background-repeat: no-repeat;
+		background-position-x: center;	
+		background-size: 30% 30%; 	
+
+    }
+
+	header h2 a
+	{
+		color: black;
+	}
+
+	nav 
+	{
+		
+		font-size: 14px; 	
+		padding-top: 20px;
+	    margin-left: 43%; 
+	    margin-right:  15%; 
+	    font-family: 'Fjalla One', sans-serif;
+
+	}
+	nav a
+	{
+		padding: 5px 5px 5px 5px; 	
+        display: block;
+        margin-bottom: 1px; 
+        background-color: unset;
+        color: #8B0000;
+	}	
+	nav  a:hover
+	{
+		
+		color: white; 
+		background-color:#8B0000; 
+
+
+	}
+
+	marquee a 
+	{
+
+		font-size: 14px; 
+
+
+	}
+}
+
+/*la fin de mon header************************************************** */
+/* le footer*/
+
+
+
+footer
+	{
+		padding-top: 15px; 
+		padding-bottom: 10px;
+		background-color: #8B0000;
+		font-family: 'Oswald', sans-serif;
+		font-size: 16px;
+		text-align: center; 
+	}
+footer a 
+	{
+		color: white;
+	}
+footer a:hover
+	{
+		text-decoration: none; 
+	}
+@media (max-width: 1100px)
+	{
+		.affiche
+			{
+				display: none; 
+			}
+	}
+
+
+/* la fin de footer**************************************** */
+
+/* on commence maintenant avec le corp de mon site*/
+
+
+main
+{
+	font-family: 'Noto Sans', sans-serif;
+  	background-color: #BFCCD2; 
+
+}
+main h3, main h2, main h1, .titre
+	{
+
+		font-family: 'Oswald', sans-serif;
+		color: #8B0000;
+
+	 
+	}
+main h1
+	{
+		font-size: 24px;
+	}
+main h2
+	{
+		font-size: 20px;
+	}
+
+main h3
+	{
+		font-size: 18px;
+	}
+main p, main textarea
+	{
+		font-size: 14px; 
+
+	}
+#pA
+{
+	padding-top: 5px; 
+	padding-bottom: 3px; 
+	background-color: #8B0000; 
+	color: white;
+	text-align: center; 
+}
+.outils
+{
+	text-align: center;
+	margin-right: 0px; 
+
+}
+.perduL
+{
+	background-color: #9E444B; 
+	
+
+}
+.trouveL
+{
+	background-color: #8EA734; 
+	
+}
+.perduL a, .trouveL a 
+{
+		
+		
+		color: black;
+		font-size: 16px; 
+}
+.perduL a:hover, .trouveL a:hover 
+{
+		
+	background-color: white; 	
+	text-decoration: none;
+
+}
+.perduH2
+{
+	color: white;
+	padding: 5px;
+}
+.perdu
+{
+	border: 1px solid #9E444B; 
+	margin-bottom: 5px;
+	border-radius: 5px; 
+	background-color: white; 
+	padding-bottom: 5px; 
+	padding-top: 5px; 
+
+
+}
+.perduText span
+{
+	text-transform: capitalize;
+}
+
+.perduText 
+{
+	padding-top: 45px; 
+	margin-left: 0px; 
+}
+.perduLien 
+{
+	padding-top: 45px; 	
+	margin-left: 0px;
+
+}
+
+@media (max-width: 991px)
+{
+		.perduText 
+	{
+		padding-top: 10px; 
+		
+	}
+	.perduLien 
+	{
+		padding-top: 0px; 
+		padding-bottom: 10px; 	
+		
+	}
+}
+.trouveH2
+{
+	color: white;
+	padding: 5px;
+
+}
+.trouve
+{
+	border: 1px solid #8EA734; 
+	margin-bottom: 5px;
+	border-radius: 5px; 
+	background-color: white; 
+	padding-bottom: 5px; 
+	padding-top: 5px; 
+
+}
+.trouveText 
+{
+	padding-top: 45px; 
+	margin-left: 0px; 
+}	
+.trouveText span
+{
+	text-transform: capitalize;
+}
+.trouveLien 
+{
+	padding-top: 45px; 	
+	margin-left: 0px;
+}
+
+
+@media (max-width: 991px)
+{
+		.trouveText 
+	{
+		padding-top: 10px; 
+		
+	}
+	.trouveLien 
+	{
+		padding-top: 0px; 
+		padding-bottom: 10px; 	
+		
+	}
+}
+/* retrouvés dans index*/
+.retrouveL
+{
+	background-color: #0000CD; 
+	
+}
+.retrouveH2
+{
+	color: white;
+	padding: 5px;
+
+}
+.retrouve
+{
+	border: 1px solid #0000CD; 
+	margin-bottom: 5px;
+	border-radius: 5px; 
+	background-color: white; 
+	padding-bottom: 5px; 
+	padding-top: 5px; 
+
+}
+.retrouveText 
+{
+	padding-top: 45px; 
+	margin-left: 0px; 
+}	
+.retrouveText span
+{
+	text-transform: capitalize;
+}
+.retrouveLien 
+{
+	padding-top: 24px; 	
+	margin-left: 0px;
+}
+@media (max-width: 991px)
+{
+		.retrouveText 
+	{
+		padding-top: 10px; 
+		
+	}
+	.retrouveLien 
+	{
+		padding-top: 0px; 
+		padding-bottom: 10px; 	
+		
+	}
+}
+/* aside dans index*/
+aside
+{
+	margin-top: 100PX;	
+	margin-right:20px; 	
+	border-radius: 5px;
+	text-align: center;
+	margin-bottom: 0px;
+	background-color: black;
+
+}
+
+#p1
+{
+	padding-bottom: 50px;
+	background-color:  black;
+	border-radius: 5px;
+	margin-top: 0;
+	padding-top: 5px;
+	width: 103%;
+}
+
+#p1  h2
+{
+	color: white;
+	padding: 5px;
+	background-color: black;
+	border-radius: 5px;
+
+}
+#p1:hover
+{
+	color: white;
+	padding: 5px;
+	background-color: #DC143C;
+
+}
+
+/* faire le rechercher par arrondissement*/
+.rechercherAA
+{
+     
+   	padding-bottom: 50px;
+	background-color:  white;
+	border-radius: 5px;
+	margin-top: 0;
+	padding-top: 5px;
+	width: 103%; 
+	margin-bottom: 60px; 
+
+
+}
+
+.rechercherAA .div1
+{
+	
+	padding-bottom: 25px; 
+
+
+}
+
+
+.div1 h2
+{
+  padding: 10px;
+  background-color: blue;
+  color: white;
+  border-radius: 5px;  
+}
+.div1 .imageA
+{
+
+	padding: 50px;
+
+}
+/*faire la partie de rechercher par rue */
+.rechercherAR
+{			
+   	background-image: url('../img/rue.jpg'); 
+	background-repeat: no-repeat;
+	background-position-x: center;	
+	background-size: 100% 100%;  
+   	padding-bottom: 50px;
+	background-color:  white;
+	border-radius: 5px;
+	width: 103%; 
+	margin-top: 62px;	
+	margin-bottom: 60px;
+	padding-top: 5px;
+
+}
+.rechercherAR .div2 form
+{
+
+	padding-top: 5px;
+}
+.div2 h2
+{
+  padding: 10px;
+  background-color: blue;
+  color: white; 
+  border-radius: 5px;
+}
+.div2 label span
+{
+
+  color: #8b0000; 
+}
+.sub2
+{
+	padding-top: 10px;
+}
+
+/* préparer l'apparence des éléments */
+@media (max-width: 991px)
+{
+	.rechercherAR
+		{
+			
+			margin-top: 30px; 
+			margin-bottom:  30px; 
+			margin-left:  10px; 
+			
+		}
+	.p1
+	{
+		margin-top: 10px; 
+		margin-bottom: 50px; 
+	}	
+}
+/* finir la page index */
+
+/* on commence avec la page retrouver */
+.h2T
+{
+	text-align: center;
+	padding: 0px;
+	border-radius: 5px;
+}
+#p2
+{
+	margin-top: 62PX;
+	margin-bottom: 40px; 
+    text-align: center;
+	
+}
+#p2 a 
+{
+	text-decoration: none;
+}
+#p2 marquee
+{
+	background-color: #DC143C;
+	padding: 12px;
+	border-radius: 5px;
+	height: 400px;
+	
+}
+#p2 marquee a img
+{
+	border-radius: 5px;
+	
+}
+#p2 h2
+{
+   text-align: center;
+   background-color: #DC143C;
+   color: white;
+   padding: 10px;
+   border-radius: 5px;
+}
+#p2 img
+{
+    width: 100%;  
+    height: 500px; 
+    padding: 4%; 
+
+}
+
+.retrouveBox
+{
+	text-align: center;
+}
+@media (max-width: 991px)
+{
+	#p2
+		{
+			margin-top: 0PX;	
+				
+		}
+	#p2 marquee
+	{
+
+		height: 300px;
+		
+	}		
+}
+/* on commance avec la page perdus.phtml */
+.textCenter
+{
+	text-align: center;
+}
+.padding
+{
+	padding: 10px;
+}
+.borderRaduis
+{
+	border-radius: 5px; 
+}
+.pageP
+{
+	margin: 0px;
+	padding: 0px;
+	color: red; 
+}
+.divP2
+{
+	margin-top: 0px; 
+}
+@media (max-width: 700px)
+{
+	#p2 img
+		{
+			height: 300px;	
+			padding: 0px;
+				
+		}
+	
+}
+.message p
+{
+	background-color: #00BFFF; 
+	color: red;
+	padding: 10px;
+	text-align: center; 
+
+}
+.textRight
+{
+	text-align: right; 
+}
+.textLeft
+{
+	text-align: left; 
+}
+
+/* partie de contact*/
+.numerique
+{
+		background-image: url('../img/numerique2.jpg'); 
+		background-repeat: no-repeat;
+		background-position-x: center;	
+		background-size: 100%  100%;
+}
+.carteA
+{
+	padding: 2%;	
+	margin-top: 5%;
+	margin-bottom: 5%; 
+	border-radius: 5px;
+	color: #660000; 
+
+}
+.carteA div a 
+{
+	color: #660000;
+}
+.carteA div a:hover 
+{
+	color: #4169E1;
+	text-decoration: none; 
+}
+.carteA div h2 
+{
+	color: black; 
+	padding-top: 25px; 
+}
+.contenuC
+{
+	padding-bottom: 5px; 
+	background-color: white;
+	border-radius: 5px; 
+
+}
+
+@media (max-width: 991px)
+{
+ .contenuC
+	{
+		padding-bottom: 5px; 
+		
+	}	
+	.carteA div h2 
+	{
+		 
+		padding-top: 0px; 
+	}
+}
+.divImageA
+{
+	padding: 10px; 
+}
+.divImageA img
+{
+	border-radius: 5px; 
+}
+.articleA h2, .articleA h3
+{
+	color: black; 
+}
+@media (max-width: 600px)
+{
+	.divImageA img
+	{
+		height: 250PX;  
+	}
+}
+
+
+@media (max-width: 991px)
+{
+ .divA
+ {
+ 	display: none; 
+ }
+}
+
+
+/* partie de photos*/
+.divPhotos
+{
+	padding: 15px; 	
+}
+
+.imgPhotos
+{
+	width: 100%; 
+	height: 400px; 
+	border-radius: 5px;  
+}
+.changeT
+{
+	background-color: #8B0000 !important; 
+}
+@media (max-width: 600px)
+{
+	.changeT
+	{
+		display: none !important;  
+	}
+
+	.imgPhotos
+	{
+		
+		height: 250px; 
+		  
+	}	
+}
+.titrePhotos
+{
+	margin-top: 10px; 
+	margin-bottom: 10px; 
+	background-color: #CC3300; 
+	padding: 10px; 
+	border-radius: 5px; 
+}
+.titrePhotos h2
+{
+	color: white;
+}
+
+/* partie de publier.phtml*/
+
+.titrePU h2
+{
+	background-color: #990000;
+	padding: 15px;
+	color: white; 
+	border-radius: 5px; 
+}
+
+.divPer
+{
+	padding: 100px; 
+	background-color: #9E444B; 
+	border-radius: 5px;
+	margin: 10px; 
+	margin-left: 95px; 
+}
+
+.divTro
+{
+	padding: 100px; 
+	background-color: #8EA734; 
+	border-radius: 5px;
+	margin: 10px;
+	
+}
+.divPer a, .divTro a
+{
+	color: white;
+	font-size: 18px; 
+	text-decoration: none; 
+}
+
+@media (max-width: 991px)
+{
+	.divPer, .divTro
+	{
+ 		margin: 0px;
+ 		padding: 35px; 
+ 		margin-bottom: 10px;  	
+	}
+}
+
+/* une partie de rechercherPar.phtml*/
+.rechercherDiv
+{
+	background-color: white; 
+	padding-bottom: 10%;
+	
+}
+.rechercherDiv h2
+{
+	background-color: #FF9933; 
+	padding: 20px; 
+	color: white;
+}
+.motR
+{
+	padding-top: 10px;
+	text-align: right; 
+	padding-bottom: 10px; 
+	 
+}
+.motR strong
+{
+	 color: #660000;
+}
+.selectR
+{
+	padding-top: 10px; 
+	padding-bottom: 10px; 
+}
+@media (max-width: 991px)
+{
+	.motR
+	{
+		text-align: center;  	
+	}
+}
+.divControl
+{
+	padding-top: 10px;
+}
+.borderR
+{
+	border-radius: 5px; 
+}
+/* faire la page de publier annonce perdu*/
+.perduP
+{
+	padding: 7px; 
+	text-align: center; 	
+	background-color: #9E444B;
+	margin-top: 10px; 
+}
+.perduP h2
+{
+	color: white;
+}
+legend
+{
+	color: #8B0000;	 
+	padding-bottom: 10px; 
+	font-size: 16px; 
+	padding-top: 20px;
+    background-color: wheat;
+    margin-top: 5px; 
+}
+
+.textRightP
+{
+	text-align: right; 
+}
+fieldset
+{
+	padding-right: 15px; 
+	padding-left: 15px; 
+}
+.paddingB
+{
+	padding-bottom: 5px; 
+}
+@media (max-width: 991px)
+{
+	.textRightP
+	{
+		text-align: left;  	
+	}
+}
+/* Faire logo Liste pour téléphones samrtephones*/
+#logoListe
+{
+	position: absolute;	
+	color: #8B0000;
+	left: 15%;
+	font-size: 25px; 
+	top: 27px;
+	display: none; 
+}
+@media (max-width: 720px)
+{
+	#logoListe
+	{
+		display: block;  	
+	}
+	.navbar
+	{
+		display: none; 
+		background-color: white; 
+	}
+	.navbar a
+	{
+		margin-left: 3%; 
+	}
+}
+
+/* page de modifier.php */
+  .modifierM
+ {
+ 	background-color: white; 
+ 	padding-bottom: 40px; 
+ }
+ .modifierH
+ {
+ 	background-color: #006400; 
+ 	padding: 20px; 
+ 	color: white;
+ }
+ .labelM
+ {
+ 	color: #8B0000; 
+ 	text-align: right;
+ }
+ .dateM
+ {
+ 	padding-left: 0px; 
+ }
+ .dateM input
+ {
+ 	width: 50%;  
+ 	padding-left: 10%; 
+ 	padding-top: 1px; 
+
+ }
+.modifierM .labelM, .modifierM .dateM
+{
+	padding-top: 30px; 
+	padding-bottom: 30px;
+}
+
+@media (max-width: 991px)
+{
+	.labelM
+	{
+		text-align: center;
+	}
+    .dateM
+    {
+    	padding-left: 20%; 
+    	padding-right: 20%; 
+    }	
+ .dateM input
+	{
+	 	width: 100%;  
+	}
+	.modifierM .labelM, .modifierM .dateM
+	{
+		padding-top: 5px; 
+		padding-bottom: 5px;
+	}
+
+}
+/* faire la page de supprimer*/
+
+/* La page est plus importante detail.phtml*/
+.info
+{
+	padding: 20px; 
+	margin: 20px; 
+	margin-bottom: 0px; 
+	background-color: white; 
+	border-radius: 10px; 
+}
+.info img
+{
+	height: 370px; 
+	border-radius: 5px; 
+}
+.contact
+{
+	background-color: #DAF6F4; 
+	text-align: center; 
+	padding-top: 20px; 
+	padding-bottom: 20px;
+	margin-top: 10px; 
+	border: 1px solid #71BAB3;
+	color: #00796D; 
+}
+.contact span
+{
+	color: #800000;
+	background-color: #EAE6E4; 
+}
+.detail h4
+{
+	color: white; 
+	background-color: #800000;
+	text-align: center; 
+	border-radius: 5px; 
+	margin-bottom: 5px; 
+	margin-top: 5px; 
+	padding: 15px; 
+}
+
+.rowD
+{
+	padding: 5px; 
+	padding-left: 10px;  
+	padding-right: 10px; 
+}
+
+
+.detail .rowD:nth-child(even)
+{
+	background-color: #EAE6E4; 
+
+}
+
+@media (max-width: 991px)
+{
+	.info img
+	{
+		height: 300px; 
+	}
+}
+
+@media(max-width: 560px)
+{
+	.rowD label,.rowD td 
+	{
+		width: 100%; 
+		padding-left: 0;  
+	}
+
+	.info img
+	{
+		height: 200px; 
+	}
+}
+
+/* parite de opération*/
+
+
+.supprimerD, .modifierD, .imprimerD
+{
+	 
+    padding: 15px;
+    margin-left: 20px; 
+    text-align: center; 
+    background-color: #92001D;
+    border: 0;
+    border-radius: 5px; 
+}
+
+.supprimerD a ,.modifierD a, .imprimerD a 
+{
+	color: white;
+	text-decoration: none; 
+}
+.supprimerD span ,.modifierD span, .imprimerD span 
+{
+	padding-right: 5px;  
+}
+.modifierD
+{
+	background-color: #428BCA; 
+}
+.imprimerD
+{
+	background-color: #4A3631; 
+}
+
+@media (max-width: 991px)
+{
+	.supprimerD, .modifierD, .imprimerD
+	{
+			    
+	    margin-left: 0;  
+	    margin-bottom: 7px; 
+
+
+	}
+	.operation
+	{
+		padding-right: 10%; 
+	    padding-left: 10%; 
+	}
+}
+
+#titreC h3,.pseudoC
+{
+	color: #007980;
+
+}
+#paragrapheC
+{
+	color: #563F2D;
+}
+/*partie de commentaire*/
+.spanC
+{
+	color: #007980;
+	font-size: 24px;
+	top: 24px;	
+}
+.pCommentaire
+{
+	background-color: #CCE4E2;
+	border-radius: 5px; 
+	margin-top: 50px;
+	padding: 10px;   
+}
+
+.pCommentaire p
+{
+	margin: 0;
+	padding: 0;
+	color: #563F2D;
+}
+.paddingCommentaire
+{
+	padding-left: 10px; 
+	padding-right: 10px; 
+}
+.pseudoC, .mailC
+{
+	word-wrap: break-word;
+}
+
+/*formulaire de commentaire*/
+
+#hfCommentaire
+{
+	text-align: center; 
+	color: #007980;
+	margin-top: 30px;
+}
+.paddingFCommentaire
+{
+ padding-bottom: 5px; 
+}
+.textRightF
+{
+	text-align: right; 
+}
+.textareaF
+{
+	height: 300px; 
+}
+@media (max-width: 991px)
+{
+	.textRightF
+	{
+		text-align: left; 
+	}
+	.pCommentaire
+	{
+		margin-top: 0px; 
+	}   
+}
+.changerColor
+{
+  animation-name: changerColor;
+  animation-duration: 10s;
+  animation-iteration-count: infinite; 
+}
+@-webkit-keyframes changerColor {
+ /*
+  from {margin-left: 0;  }
+
+  to {margin-left: 10px; }
+  */
+
+  20%   {color:  white;}
+  40%  {color:  #3300CC;}
+  60%  {color:  #CC6600;}
+  80%  {color:  #006600;}
+  100%  {color:  #000000;}
+
+}
+
+#cap
+{
+	word-wrap: break-word;
+}
+/*page d'impression*/
+
+@media(max-width: 600px)
+{
+	main h1
+	{
+		font-size: 22px;
+	}
+main h2
+	{
+		font-size: 18px;
+	}
+
+main h3,main h4
+	{
+		font-size: 16px;
+	}
+main p, main textarea, main label, main td,main a
+	{
+		font-size: 12px; 
+
+	}
+
+}
+@media(max-width: 500px)
+{
+	.info
+	{
+		padding: 6px; 
+		margin: 4px; 		
+		border-radius: 10px; 
+		
+	}
+	.adap1
+	{
+		margin: 0; 
+	}
+
+}
+

@@ -1,0 +1,36 @@
+
+	    <div class="container-fluid div1">
+	    	<h2 class="row">Rechercher par arrondissement</h2>
+	    
+			<form action="rechercher.php" method="POST" class="row">
+			    
+				<div class="form-group col-xs-12 row ">
+					<label for="arrondissement" class="col-xs-12" style="color: #8b0000; padding-bottom: 5px;">
+						 Choisissez votre arrondissement
+					</label>
+					<div class="col-xs-3"></div>
+					<div class="col-xs-6">						
+						<select name="arrondissement" class="form-control" id="arrondissement">
+							<?php for($i=13001;$i<13017;$i++):?>
+								<option value=<?=$i?>>
+									<?=$i?>
+								</option>
+							<?php endfor;?>	
+						</select>
+					</div>
+					<div class="col-xs-3"></div>	
+                </div>
+                <div class="col-xs-12">
+					<div class="col-xs-4"></div>
+					<div class="col-xs-2 sub">
+					<input type="submit" name="chercher" value="Rechercher" class="btn btn-primary">
+					<div class="col-xs-3"></div>
+				</div>
+						
+			</form>
+	
+		<?php if(empty($messageR)==false): ?>
+			<p><?=$messageR?></p>
+		<?php endif; ?>	
+	
+       </div>

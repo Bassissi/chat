@@ -1,0 +1,43 @@
+<div class="container-fluid">
+
+	<div class="row " style="padding-right: 5%; padding-left: 5%;  ">
+		<div class="row textCenter carteA numerique ">
+			    
+				<div   style=" " class="col-xs-12 col-md-6 textCenter " ><img src="img/profile.jpg" width="200px" height="225px" class="img-responsive "/></div>
+			
+			    <div class="col-xs-12 col-md-6 textLeft contenuC">
+					<div class="col-xs-12"><strong>
+						<h2>Hmzeh Bassissi</h2></strong></div>				
+					<div class="col-xs-12"><strong>Développeur WEB</strong></div>
+					<div class="col-xs-12"><srtrong><i class="fas fa-mobile-alt"></i></srtrong> <strong>0782440117</strong>
+					</div>
+					<div class="col-xs-12">   
+						<a href="mailto:?to=hamzehbassissi@gmail.com">
+						<i class="fas fa-envelope"></i><strong>
+						 hamzehbassissi@gmail.com
+						</strong>
+						</a>
+					</div>
+				</div>
+
+		
+		
+	</div>
+
+	<!--L'endroit de publicité -->	
+	<div class="row">	
+		<div class="publicite col-xs-12 " id="p2" style="margin-top: -6PX;">
+						    <h2>Publicité</h2>
+						   <marquee direction="up"> 
+							<a href="<?=$publiciteDetail[0]['lien']?>" ><img src="<?=$publiciteDetail[0]['url']?>" class="img-rounded img-responsive"></a>
+						   </marquee>	
+		</div>
+		<?php if($publiciteDetail[0]['url']=='null'):?>
+
+							<script >		
+						     document.getElementById("p2").style.display = "none";	
+							</script>
+							
+		<?php endif;?>	
+	</div>
+</div>

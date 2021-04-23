@@ -1,0 +1,52 @@
+<div class="container-fluid">
+	<div class=row>
+		<div class="chercher container-fluid textCenter rechercherDiv" >
+			<div class="row">		    
+		    	<h2>Rechercher par rue</h2>
+		    </div>	
+				<form action="rechercherR.php" method="POST">
+			<div class="row">	    
+	            <div class="col-xs-12 textCenter">    
+					<label for="rue">
+						<strong style="color: #660000;">	
+							Ecrivez le nom de la rue 
+						</strong>	
+					</label>
+				</div>	
+				<div class="col-md-4"></div>
+				<div class="col-xs-12 col-md-4 textCenter">							
+					<!-- on suveille l'input de la rue par ajax -->	
+	                <input type="text" name="rue"  id="rue" size="50" minlength="4"  maxlength="50" list="RPL" required class="form-control">
+	                <!-- On met le resutat d'ajax ici pour proposer au client les noms des rues-->
+	                <datalist id="RPL"></datalist>
+	            </div>
+	            <div class="col-md-4"></div>    
+			</div>
+			<div class="row divControl">	
+					<input type="submit" name="chercherR" value="Rechercher" class="btn btn-primary ">
+			</div>				
+			   </form>
+		
+			<?php if(empty($messageR)==false): ?>
+				<div class="message" style="padding-top: 10px;">
+					<p><?=$messageR?></p>
+			    </div>
+			<?php endif; ?>	
+		</div>
+    </div>
+			<!--L'endroit de publicité -->		
+	<div class="publicite col-xs-12 " id="p2" style="margin-top: -6PX;">
+					    <h2>Publicité</h2>
+					   <marquee direction="up"> 
+						<a href="<?=$publiciteDetail[0]['lien']?>" ><img src="<?=$publiciteDetail[0]['url']?>" class="img-rounded img-responsive"></a>
+					   </marquee>	
+					</div>
+					<?php if($publiciteDetail[0]['url']=='null'):?>
+
+						<script >		
+					     document.getElementById("p2").style.display = "none";	
+						</script>
+						
+					<?php endif;?>	
+	</div>	
+</div>

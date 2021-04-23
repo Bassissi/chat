@@ -1,0 +1,34 @@
+ <div class="container-fluid">
+    <div class="row">
+    	<div class="col-xs-12 textCenter titrePU ">
+			<h2>Publier une annonce</h2>
+		</div>
+		
+		<div class="col-xs-12 col-md-5 textCenter divPer">
+
+			<a href="ajouter.php?type=perdu" title="Publiez une annonce pour un chat perdu " id="subPubP">J'ai perdu mon chat </a>
+		         
+		</div>
+
+	  	
+		<div class="col-xs-12 col-md-5 textCenter divTro">
+
+					<a href="ajouter.php?type=trouve" title="Publiez une annonce pour un chat trouvé " id="subPubT">J'ai trouvé un chat </a>
+			
+		</div>
+		<!--L'endroit de publicité -->		
+		<div class="publicite col-xs-12 " id="p2" style="margin-top: -6PX;">
+				    <h2>Publicité</h2>
+				   <marquee direction="up"> 
+					<a href="<?=$publiciteDetail[0]['lien']?>" ><img src="<?=$publiciteDetail[0]['url']?>" class="img-rounded img-responsive"></a>
+				   </marquee>	
+				</div>
+				<?php if($publiciteDetail[0]['url']=='null'):?>
+
+					<script >		
+				     document.getElementById("p2").style.display = "none";	
+					</script>
+					
+				<?php endif;?>	
+	</div>
+</div>

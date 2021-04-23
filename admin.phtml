@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+	<head>
+	<meta charset="utf-8">	
+	
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+	    <link rel="stylesheet" type="text/css" href="css/styleAdmin1.css">
+		<link rel="shortcut icon" type="image/x-icon" href="img/parDefaut0.jpg" />	
+
+		<link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Fira+Sans|Fjalla+One|Merriweather|Roboto+Mono|Roboto+Slab&display=swap" rel="stylesheet"> 
+
+		<link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet"> 
+
+		<link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap" rel="stylesheet"> 
+
+		<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+
+		<link href="https://fonts.googleapis.com/css?family=Noto+Sans|Shrikhand" rel="stylesheet"> 
+
+		<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">   
+
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous">
+		</script>
+
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous">
+        </script>	
+
+	</head>
+	<body >
+
+		<header>
+
+			 			
+					<center>
+						<h2><a href="admin.phtml" > Administrateur Chat perdu Marseille</a></h2>
+
+					</center>
+					<span class="glyphicon glyphicon-th-list btn " id="logoListe"></span>
+
+					<nav class="navbar">
+						<a href="logout.php"><spam class="glyphicon glyphicon-off"></spam></a>
+				   				   
+						<a href="gerer.php">Gérer votre compte</a>			
+						<a href="perduA.php">Perdus</a>				
+						<a href="trouveA.php">Trouvés</a>				
+						<a href="retrouveA.php">Retrouvés</a>				
+						<a href="visiteurs.php">Visiteurs</a>
+					</nav>			
+
+				
+			
+        </header>
+        <main>
+
+		   <div class=" col-xs-12 col-md-2 publicite0">
+		    		<ul>
+							<h3 >Publicités :</h3>
+							<li><a href="publicite.php?id=1">Publicité1</a> </li>
+							<li><a href="publicite.php?id=2">Publicité2</a> </li>
+							<li><a href="publicite.php?id=3">Publicité3</a> </li>
+							<li><a href="publicite.php?id=4">Publicité4</a> </li>
+
+					</ul>
+		   </div>        	
+		   <div class="corp  col-xs-12 col-md-10">
+				<?php if (empty($template)!=true)
+				       {
+				     		include $template; 
+
+				       }      
+
+                    
+				?>
+
+
+			</div>			
+ 
+
+	    </main>
+	     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        </script>
+        <script type="text/javascript" src="javascript/javascript.js"></script>
+	</body>
+</html>

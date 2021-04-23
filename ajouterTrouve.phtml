@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<!--Remplissage automatique d'un formulaire d'adresse avec Google Place-->	
+	
+	    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=
+AIzaSyBK3q2roaboLSWVnpneLb863Gl73xMNVNk
+" type="text/javascript">
+	    </script>
+
+	</head>
+
+	<div class="row perduP" style="background-color: #8ca533; ">   
+		<h2 id="h3T">Publier une annonce pour un chat trouvé</h2>
+	</div>	
+		<!--  les message d'erreurs -->
+	<div class="message row">
+			<?php 
+            if(empty($erreur)==false)
+            	foreach ($erreur as $key => $value)
+            	{
+            		echo '<p>'.$value.'</p>'; 
+            	}
+            	
+			?>
+	</div>
+	<div class="row" >
+       		
+       	<div class="col-xs-12 ">   
+			<form method="POST" action="ajouter.php?type=trouve" enctype="multipart/form-data">	
+			 	
+			 	<fieldset style="background-color:white;" >
+			 	    <legend class="col-xs-12  textCenter"><strong> Informations sur un chat trouvé</strong></legend>
+			 	    <!--nom-->
+			 	    <div class="row paddingB">	
+				 	    <div class="col-md-1"></div>
+				 	    <div class="col-xs-12 col-md-4 textRightP">			 	    	
+							<label for="nom">Nom de ce chat si vous savez   </label>
+						</div>
+						<div class="col-xs-12 col-md-4 ">	
+							<input type="text" name="nom" class="name form-control" size="15" maxlength="15" pattern="[a-zA-ZàâæçéèêëîïôœùûüÿÀÂÆÇnÉÈÊËÎÏÔŒÙÛÜŸ -]+" minlength="3" placeholder="si vous savez" id="nom">
+						</div>
+						<div class="col-md-3"></div>   		 	    
+                    </div>
+			        <!--sex-->	
+				    <div class="row paddingB">
+                            <div class="col-md-1"></div>
+                            <div class="col-xs-12 col-md-4 textRightP">
+							<label for="sex">Sexe  </label>	
+							</div>
+							<div class="col-xs-6 col-md-1 ">			
+								<input type="radio" name="sex" value="male" checked class="">							
+								<label for="sex"> Mâle </label>	
+							</div>
+							<div class="col-xs-6 col-md-2 ">
+								<input type="radio" name="sex" value="femelle" class="">
+								<label for="sex"> Femelle </label>	
+		                    </div>
+						    <div class="col-md-3"></div>
+		           	</div>
+	           
+			 		<!--race-->	
+				 		<!--race-->	
+				 		<div class="row paddingB">
+				 			<div class="col-md-1"></div>
+				 			<div class="col-xs-12 col-md-4 textRightP">
+								<label for="race">Race dominante </label>
+							</div>
+							<div class="col-xs-12 col-md-4 ">	
+								<select name="race" class="form-control" id="race">
+
+										<option value="Aucune">Aucune race particulière (croisé)</option>
+										<option value="Abyssin">Abyssin</option>
+										<option value="Américain à poil dur">Américain à poil dur</option>	
+										<option value="American Bobtail">American Bobtail</option>
+										<option value="American Shorthair">American Shorthair</option>
+										<option value="Angora Turc">Angora Turc</option>
+										<option value="Balinais">Balinais</option>
+										<option value="Bengal">Bengal</option>
+										<option value="Bleu Russe">Bleu Russe</option>
+										<option value="Bombay">Bombay</option>
+										<option value="British Shorthair">British Shorthair</option>
+										<option value="Burmese">Burmese</option>
+										<option value="Chartreux">Chartreux</option>
+										<option value="Chat de gouttière">Chat de gouttière</option>
+										<option value="Chat des bois Norvégiens">Chat des bois Norvégiens</option>
+										<option value="Chat du Sri Lanka">Chat du Sri Lanka</option>
+										<option value="Chat sacré de Birmanie">Chat sacré de Birmanie</option>
+										<option value="Commun">Commun</option>
+										<option value="Cornish rex">Cornish rex</option>
+										<option value="Devon rex">Devon rex</option>
+										<option value="Européen">Européen</option>
+										<option value="Exotic Shorthair">Exotic Shorthair</option>
+										<option value="Himalayan">Himalayan</option>
+										<option value="Korat">Korat</option>
+										<option value="Maine Coon">Maine Coon</option>
+										<option value="Mandarin">Mandarin</option>
+										<option value="Norvégien">Norvégien</option>
+										<option value="Ocicat">Ocicat</option>
+										<option value="Oriental">Oriental</option>
+										<option value="Persan">Persan</option>
+										<option value="Ragdoll">Ragdoll</option>
+										<option value="Rex Selkirk">Rex Selkirk</option>
+										<option value="Scottish Fold">Scottish Fold</option>
+										<option value="Siamois">Siamois</option>
+										<option value="Sibérien">Sibérien</option>
+										<option value="Somali">Somali</option>
+										<option value="Sphynx">Sphynx</option>	
+								</select>
+							</div>
+							<div class="col-md-3"></div>
+						</div>
+						<!--couleurs-->
+
+						<div class="row paddingB">
+							<div class="col-md-1"></div>
+							<div class="col-xs-12 col-md-4 textRightP">	 		
+								<label for="couleurs"> Couleurs </label>
+							</div>
+							<div class="col-xs-12 col-md-4 ">
+							<div style="display: inline-block; vertical-align: text-top;">				
+									<input type="checkbox" name="c1" value="noir" >
+									<label for="noir">Noir</label>	
+									<br>				
+									<input type="checkbox" name="c2" value="marron" >
+									<label for="marron">Marron</label>				
+					                <br> 				
+									<input type="checkbox" name="c3" value="gris" >
+									<label for="gris">Gris</label>				
+					                <br>				
+									<input type="checkbox" name="c4" value="blans" >	
+									<label for="blans">Blanc</label>			
+					                <br>                
+									<input type="checkbox" name="c5" value="beige" >
+									<label for="beige">Beige</label>				
+					                <br>    
+									<input type="checkbox" name="c6" value="roux" >
+									<label for="roux">Roux</label>				
+					                <br> 				
+									<input type="checkbox" name="c7" value="écaille" >
+									<label for="écaille">Ecaille</label>				
+					                
+				                 </div>
+			                 </div>  
+			                 <div class="col-md-3"></div>
+		                 </div>    
+	                                                                             
+            
+		                <!--Longeur du pelage-->
+		                <div class="row paddingB">
+		                	<div class="col-md-1"></div>
+		                	<div class="col-xs-12 col-md-4 textRightP">
+			                	<label for="poils">Longueur du pelage</label>
+			                </div>
+			                <div class="col-xs-12 col-md-4 ">	
+				                <select name="poils" class="form-control" id="poils">
+					                <option value="court" >court</option>
+					                <option value="long" >long</option>	
+				                </select>
+				            </div> 
+				            <div class="col-md-3"></div>   
+		               	</div>
+		                <!--Dessin du pelage-->
+		                <div class="row paddingB">
+		                	<div class="col-md-1"></div>
+                            <div class="col-xs-12 col-md-4 textRightP">
+			                	<label for="pelage">Dessin du pelage</label>
+			                </div>
+			                <div class="col-xs-12 col-md-4 ">	
+				                <select name="pelage" class="form-control" id="pelage">
+					                <option value="uni" >uni</option>
+					                <option value="tigré">tigré</option>
+					                <option value="taché">tacheté</option>	
+				                </select>
+			            	</div>
+			            	<div class="col-md-3"></div>
+		                </div>
+		                <!--Castré-->
+		                <div class="row paddingB">
+                            <div class="col-md-1"></div>
+                            <div class="col-xs-12 col-md-4 textRightP">            	
+			                	<label for="castre">Castré/Stérilisé </label>
+			                </div>
+			                <div class="col-xs-6 col-md-1 ">	
+								<input type="radio" name="castre" value="oui" checked>
+								<label for="castre"> Oui </label>	
+							</div>
+							<div class="col-xs-6 col-md-2 ">			
+								<input type="radio" name="castre" value="non">	
+								<label for="castre"> Non </label>
+							</div>
+							<div class="col-md-3"></div>	
+		                </div>
+		                 <!--Photo-->
+		                 <div class="row paddingB">
+		                 	<div class="col-md-1"></div>
+		                 	<div class="col-xs-12 col-md-4 textRightP">
+			                	 <label for="uplaodI"><strong>Téléchargez sa photo </strong></label>
+			                </div>
+			                <div class="col-xs-12 col-md-4 ">	 
+			                	 <input type="file"  style="color:red;"  name="uplaodI" id="uplaodI" > 
+			                </div> 
+			                <div class="col-md-3"></div>
+		                 </div>          
+
+                <!--datePT-->
+		                <div class="row paddingB">
+		                 	<div class="col-md-1"></div>
+		                 	<div class="col-xs-12 col-md-4 textRightP">            	
+								<label  class="block">Quand avez-vous trouvé ce chat ?</label> 
+							</div>
+			                <div class="col-xs-12 col-md-4 ">
+				                 <select name="jourPT">
+								    <?php for($i=1;$i<32;$i++):?>
+										<option <?php if($i==1|$i<=9) echo 'value=0'.$i; else echo 'value='.$i; ?> <?php if($i==date('d')):?> <?='selected'?> <?php endif?>><?php if($i==1|$i<=9) echo '0'.$i; else echo $i; ?></option>
+									<?php endfor;?>
+							    </select>
+								<select name="moisPT">
+								    <?php $mois=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre']; foreach($mois as $key => $value):?>
+										<option <?php $j=$key+1;if($j==1 | $j<=9) echo 'value=0'.$j; else echo 'value='.$j; ?><?php if($key+1==date('m')):?> <?='selected'?> <?php endif?>><?=$value?></option>
+									<?php endforeach;?>
+								</select>
+								<select name="anPT">
+								    <?php for($i=date('Y')-4;$i<=date('Y');$i++):?>
+										<option value=<?=$i?><?php if($i==date('Y')):?> <?='selected'?> <?php endif?>><?=$i?></option>
+									<?php endfor;?>
+								</select>
+							</div>
+							<div class="col-md-3"></div>	                
+		                </div>
+
+
+
+
+					<!--description-->              
+		                <div class="row paddingB">
+		                 	<div class="col-md-1"></div>
+		                 	<div class="col-xs-12 col-md-4 textRightP">            	
+			                	 <label for="description" style="vertical-align: top;">Caractères particuliers</label>
+			                </div> 
+			                <div class="col-xs-12 col-md-4 ">
+			                	 <textarea placeholder="vous pouvez donner des informations complèmentaires" name="description" maxlength="200" class="form-control" style="height: 150px;" id="description"></textarea>
+			                </div> 
+			                <div class="col-md-3"></div>
+		                </div>
+		             <!-- lieu-->
+		             	<div class="row paddingB">
+		                 	<div class="col-md-1"></div>
+		                 	<div class="col-xs-12 col-md-4 textRightP">        		
+			                	 <label for="rue"> Rue</label>
+			                </div>
+			                <div class="col-xs-12 col-md-4">
+								 <input type="text" name="rue" class="rue form-control" maxlength="80" pattern="[a-zA-ZàâæçéèêëîïôœùûüÿÀÂÆÇnÉÈÊËÎÏÔŒÙÛÜŸ,.'- 0-9-]+" minlength="3" id="user_input_autocomplete_address">
+							</div> 
+							<div class="col-md-3"></div>
+					    </div>
+	           <!-- partie de Google Mape -->
+
+	             <div style="display: none;">
+			      <label>Latitude</label>
+			      <input id="latitude" name="latitude"  >
+			    </div>
+			 
+			    <div style="display: none;">
+			      <label>Longitude</label>
+			      <input id="longitude" name="longitude"  >
+			    </div>  
+
+   				<div class="row paddingB">
+		                <div class="col-md-1"></div>
+		                <div class="col-xs-12 col-md-4 textRightP">                	
+							<label for="arrondissement">Arrondissement</label>
+						</div>
+						<div class="col-xs-12 col-md-4">
+							<select name="arrondissement" class="form-control" id="arrondissement">
+								<?php for($i=13001;$i<13017;$i++):?>
+									<option value=<?=$i?>>
+										<?=$i?>
+									</option>
+								<?php endfor;?>	
+							</select>
+						</div>
+						<div class="col-md-3"></div>
+                    </div>
+		        </fieldset>
+
+			        <fieldset style="background-color:white;">
+			        	<legend  class="col-xs-12  textCenter" ><strong> Vos données</strong></legend>
+			        	<div class="row paddingB">
+			                <div class="col-md-1"></div>
+			                <div class="col-xs-12 col-md-4 textRightP">	        		
+				        		<label for="dateNaissance" class="block">Date de naissance</label>
+				        	</div>
+				        	<div class="col-xs-12 col-md-4 ">	
+				                 <select name="jour">
+								    <?php for($i=1;$i<32;$i++):?>
+										<option <?php if($i==1|$i<=9) echo 'value=0'.$i; else echo 'value='.$i; ?> ><?php if($i==1|$i<=9) echo '0'.$i; else echo $i; ?></option>
+									<?php endfor;?>
+							    </select>
+					            <?='/'?>
+
+								<select name="mois">
+								    <?php $mois=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre']; foreach($mois as $key => $value):?>
+										<option <?php $j=$key+1;if($j==1 | $j<=9) echo 'value=0'.$j; else echo 'value='.$j; ?>><?=$value?></option>
+									<?php endforeach;?>
+								</select>
+					            <?='/'?>
+
+								<select name="an" >
+								    <?php for($i=1935;$i<=date('Y')-15;$i++):?>
+										<option value=<?=$i?><?php if($i==1980):?> <?='selected'?> <?php endif?>><?=$i?></option>
+									<?php endfor;?>
+								</select>
+
+							</div>
+							<div class="col-md-3"></div>	
+						</div>
+					<!-- Phone-->
+						<div class="row paddingB">
+					 			<div class="col-md-1"></div>
+					 			<div class="col-xs-12 col-md-4 textRightP">						
+									<label for="phone">Numéro de téléphone</label>
+								</div>
+								<div class="col-xs-12 col-md-4">								
+									<input type="tel" name="phone" pattern="[0-9]{10}" maxlength="10" class="form-control" id="phone">
+								</div>
+								<div class="col-md-3"></div>
+						</div>			
+				        </fieldset>
+ 						<div class="row " style="background-color: white; padding-top: 5px; padding-bottom: 15px;">
+	                        <div class="col-xs-5"></div>
+	                        <div class="col-xs-4">	
+			           			 <input type="submit" name="submit" value="Publier" class="submit btn btn-success "  onclick="message()"  > 
+			           		</div>
+			           		<div class="col-xs-3">	  
+			        	</div>
+		            </div>	    	        
+			</form>
+		</div>
+	</div>		
+	<!--<script type="text/javascript" src="javascriptg.js"></script>-->	
+	
+	<!--L'endroit de publicité -->		
+	<div class="row">
+		<div class="publicite col-xs-12 " id="p2" style="margin-top: -6PX;">
+		    <h2>Publicité</h2>
+		    <marquee direction="up">
+			   <a href="<?=$publiciteDetail[0]['lien']?>" ><img src="<?=$publiciteDetail[0]['url']?>" class="img-rounded img-responsive"></a>	
+			</marquee>
+		</div>
+		<?php if($publiciteDetail[0]['url']=='null'):?>
+
+			<script >		
+		     document.getElementById("p2").style.display = "none";	
+			</script>
+			
+		<?php endif;?>
+  	</div>	
+	<!-- javascript-->
+	<script type="text/javascript">
+		function message()
+		{
+
+
+
+          if(confirm("Voulez-vous vraiment publier cette annonce ?"))
+          {
+           	var v=1;
+           	 
+          }
+          if(v!==1)
+          {
+          	document.write("Vous avez renoncé à ajouter une annonce !");
+          	
+          	setTimeout(function() {window.location.assign("index.php");},2500); 
+             	
+          	        	
+          }	 
+		}
+        
+	</script>		
+</html>

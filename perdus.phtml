@@ -1,0 +1,83 @@
+
+	<div class="container-fluid">
+			        <!-- messages:-->
+	        <div class="row message ">
+	       
+             <?php         
+          
+             if(empty($_SESSION['messageSCI'])==false)
+             	echo '<p style="color:red;">'.$_SESSION['messageSCI'].'</p>'; 
+
+             if(empty($_SESSION['messageAjouter'])==false)
+             	echo '<p style="color:red;">'.$_SESSION['messageAjouter'].'</p>';            
+
+	        if(empty($_SESSION['messageModifier'])==false)
+	            echo '<p style="color:red;">'.$_SESSION['messageModifier'].'</p>';
+	             
+	          session_unset();                
+             ?>
+
+	        </div>
+
+	<!-- On cherche nos annonces-->	
+
+		<div class="row" >
+			<?php if (empty($annoncePs)!==true):?>
+
+     <!-- On compte combien on a des annonces-->				
+					<?php 
+						$counter=0; 
+						foreach ($annoncePs as $key)
+						$counter+=1; 
+					    if($counter==1|$counter==0)
+						    	$message=$counter.' chat perdu'; 
+						else
+						    	$message=$counter.' chats perdus';
+			        ?>
+			        <?php if($counter>=0):?>
+			           	       
+			        		<h2 class="col-xs-12 perduL perduH2 textCenter padding borderRaduis ">Nous avons <?=$message?> </h2>
+			           	
+			        <?php endif;?>	  	
+
+					<div id="tableP" class="col_xs_12 " style="margin-top: 75px;">
+
+						<!-- le revnu d'ajax chat perdu -->
+
+					</div>
+
+	
+			<?php endif;?>
+			<?php if(isset($liens)):?>
+			<div id="tableP col-xs-12 " >	
+				<nav aria-label="Page navigation " style="padding-top: 1px; margin: 0px; background-color: #9E444B;  ">
+				  <ul class="pagination " >
+		
+						<?php foreach ($liens as $key => $value):?>
+							<li class="pageP" ><a href="#" class="nP" data-id="<?=$value?>"><?=$value?></a></li>
+						<?php endforeach;?>
+					
+				  </ul>
+			    </nav>				  
+			</div>	
+			<?php endif; ?>	
+			<!--L'endroit de publicité -->		
+			<div class="publicite col-xs-12 " id="p2" style="margin-top: -6PX;">
+				    <h2>Publicité</h2>
+				   <marquee direction="up"> 
+					<a href="<?=$publiciteDetail[0]['lien']?>" ><img src="<?=$publiciteDetail[0]['url']?>" class="img-rounded img-responsive"></a>
+				   </marquee>	
+				</div>
+				<?php if($publiciteDetail[0]['url']=='null'):?>
+
+					<script >		
+				     document.getElementById("p2").style.display = "none";	
+					</script>
+					
+				<?php endif;?>	
+			</div>
+
+		</div>
+
+
+                   

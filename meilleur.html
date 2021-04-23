@@ -1,0 +1,36 @@
+<div class="container-fluid">
+<div class="row">
+	<div class="col-xs-12 col-md-6 divImageA"><img src="img/marseille122.jpg" width="100%;"></div>
+	<div class="col-xs-12 col-md-6 articleA">
+		<h2> Où est donc mon chat marseillais ?</h2>
+		<h3>Pourquoi ce site est le meilleur ?</h3>
+		<p>On trouve des sites qui remplissent  cette mission mais ils demandent beaucoup  d’informations personnelles et la création d’un compte  pour  pouvoir publier une annonce. Nous avons aussi  remarqué que  chacun  de ces sites couvre  plusieurs villes et même plusieurs pays, ce qui complique la recherche pour les utilisateurs.
+		</p>
+		<p>
+			<strong>Ce site évite  cette complexité.  Les utilisateurs  publient  leur annonce en donnant  un nombre réduit  d’informations personnelles,leur date de naissance d'identifiant. Et ce site  couvre une seule ville, Marseille.</strong>	
+		</p>
+	   	<h3 id="services">Les services proposés par ce site :</h3>
+		<ul>
+			<li>Publication d’une annonce « chat perdu »</li>
+			<li>Publication d’une annonce « chat trouvé »</li>
+			<li>Modification  et suppression  facile  d’une annonce <strong>par l’utilisateur  en indiquant simplement sa date de naissance.</strong></li>	
+		</ul>
+	</div>
+</div>
+	
+			<!--L'endroit de publicité -->		
+<div class="publicite col-xs-12 " id="p2" style="margin-top: -6PX;">
+				    <h2>Publicité</h2>
+				   <marquee direction="up"> 
+					<a href="<?=$publiciteDetail[0]['lien']?>" ><img src="<?=$publiciteDetail[0]['url']?>" class="img-rounded img-responsive"></a>
+				   </marquee>	
+				</div>
+				<?php if($publiciteDetail[0]['url']=='null'):?>
+
+					<script >		
+				     document.getElementById("p2").style.display = "none";	
+					</script>
+					
+				<?php endif;?>	
+</div>
+</div>

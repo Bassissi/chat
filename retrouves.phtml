@@ -1,0 +1,72 @@
+<section class="container-fluid" style="margin-bottom: 0px;">
+
+
+	<!-- On cherche nos annonces-->	
+
+		<div class="row">
+			
+			<div class="col-xs-12 col-md-8">	
+						<?php if (empty($annonceRTs)!==true):?> 
+				
+					<h2 class="row retrouveL retrouveH2 h2T">Les chats retrouvés</h2>	
+					
+
+						<?php foreach($annonceRTs as $key =>$annonce): ?>
+
+					<div class="container-fluid retrouveBox">
+						<div class="row retrouve">
+								<?php 
+									if($annonce['sex']=='femelle')
+									{
+										$sex='chatte'; 
+										$type='retrouvée'; 
+									}
+									else
+									{
+										$sex='chat';
+										$type='retrouvé'; 
+									}
+								?>
+
+								<div class="col-xs-12 col-md-3"><img src=<?=$annonce['url']?> style= "width:150px; height: 140px;" title='<?=$annonce['name'].', '.$sex.' '.$type  ?>' class="img-rounded"></div>
+
+
+								<div class="col-xs-12 col-md-6 retrouveText">
+
+									<?php 
+									$dateModifier=$annonce['dateModifier'];
+									$dateRT=date("d/m/Y", strtotime($dateModifier)); ?>
+									<p><?= '<span>'.'<strong>'.$annonce['name'].'</strong>'.'</span>'.', '.$sex.' <span style="color:blue;"> '.$type.'</span> le '.$dateRT?></p>
+									<p><?='<strong>Lieu :</strong>  '.$annonce['rue'].' '.$annonce['arrondissement'].' Marseille'?></p>
+								</div>
+								
+								<div class="col-xs-12 col-md-3 retrouveLien">
+									<img src="img/happy.jpg" class="img-circle" style="width:100px; height: 92px;">
+								</div>
+					</div>
+							</div>      		
+                        <?php  endforeach;?>
+					
+				
+			<?php endif;?>	
+		</div>
+	
+	
+
+
+	<!--L'endroit de publicité -->		
+		<div class="publicite col-xs-12 col-md-4" id="p2" >
+		 <a href="<?=$publiciteDetail[0]['lien']?>" ><h2>publicité</h2></a>
+		    <marquee direction="down" >
+			 	<a href="<?=$publiciteDetail[0]['lien']?>" ><img src="<?=$publiciteDetail[0]['url']?>" width="100%" height="300px" ></a>
+			</marquee>
+		</div>
+		
+		<?php if($publiciteDetail[0]['url']=='null'):?>
+
+			<script >		
+		     document.getElementById("p2").style.display = "none";	
+			</script>
+			
+		<?php endif;?>	
+</section>

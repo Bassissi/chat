@@ -1,0 +1,258 @@
+<!--
+<div class="container-fluid">
+	<div class="row textCenter rechercherDiv" style="padding-bottom: 10px;"><h2>Le résultat de votre recherche</h2></div>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<!--
+			<section>
+
+				<?php if (empty($chercherRue)!==true):?>
+					<table class="table1">
+						
+						<tbody>
+
+							<?php foreach($chercherRue as $key =>$annonce): ?>
+
+								<tr>
+									<?php 
+										if($annonce['sex']=='femelle' && $annonce['type']=='perdu')
+										{
+											$sex='chatte';
+											$type='perdue';  
+										}
+										if($annonce['sex']=='male' && $annonce['type']=='perdu')
+										{
+											$sex='chat';
+											$type='perdu'; 
+										}
+										if($annonce['sex']=='femelle' && $annonce['type']=='trouve')
+										{
+											$sex='chatte';
+											$type='trouvée';  
+										}
+										if($annonce['sex']=='male' && $annonce['type']=='trouve')
+										{
+											$sex='chat';
+											$type='trouvé'; 
+										}	
+										if($annonce['sex']=='femelle' && $annonce['type']=='retrouve')
+										{
+											$sex='chatte';
+											$type='retrouvée';  
+										}
+										if($annonce['sex']=='male' && $annonce['type']=='retrouve')
+										{
+											$sex='chat';
+											$type='retrouvé'; 
+										}									
+									?>
+
+									<td><img src=<?=$annonce['url']?> style="width:100px; height: 100px;" title='<?=$annonce['name'].', '.$sex.' '.$type.' le ' .$annonce['datePT'] ?>'></td>
+
+
+									<td>
+										<p><?=$annonce['name'].', '.$sex.' <span style="color:red">'.$type.'</span> le '.$annonce['datePT']?></p>
+										<p><?='Lieu :  '.$annonce['rue'].' '.$annonce['arrondissement'].' Marseille'?></p>
+									</td>
+									
+									<td>
+										<?php if($annonce['type']=='perdu' ||$annonce['type']=='trouve' ):?>
+											<a href="detail.php?idchat=<?=$annonce['idchat']?>&type=<?=$annonce['type']?>">
+												 Le détail » 
+											</a>
+									    <?php else: ?>
+									    	<img src="img/0782440117.png" style="width:75px; height: 75px;">
+									    <?php endif;?>	
+
+									</td>
+								</tr>
+
+	                        <?php  endforeach;?>
+						</tbody>
+					</table>
+				<?php endif;?>
+
+
+			</section>
+		
+
+
+
+
+
+
+			<div class="col-md-2"></div>
+	</div>
+
+
+	<div class="publicite col-xs-12 " id="p2" style="margin-top: -6PX;">
+					    <h2>Publicité</h2>
+					   <marquee direction="up"> 
+						<a href="<?=$publiciteDetail1[0]['lien']?>" ><img src="<?=$publiciteDetail1[0]['url']?>" class="img-rounded img-responsive"></a>
+					   </marquee>	
+					</div>
+					<?php if($publiciteDetail1[0]['url']=='null'):?>
+
+						<script >		
+					     document.getElementById("p2").style.display = "none";	
+						</script>
+						
+					<?php endif;?>	
+	</div>		
+		
+
+</div>
+-->
+<div class="container-fluid">
+	<div class="row textCenter rechercherDiv" style="padding-bottom: 10px;"><h2>Le résultat de votre recherche</h2></div>
+	<div class="row">
+		<div class="col-md-2"></div>
+		<section class="col-xs-12 col-md-8 container-fluid textCenter" >
+			<?php if (empty($annoncePs)!==true):?>
+				
+					 <h2 class="row perduL perduH2 borderR" >Les chats perdus</h2>	
+					
+
+						<?php foreach($annoncePs as $key =>$annonce): ?>
+                         <div class="container-fluid perduBox">
+							<div class=" divP row perdu "  data_id="<?=$key?>" id="divP<?=$key?>" >
+								<?php 
+									if($annonce['sex']=='femelle')
+									{
+										$sex='chatte';
+										$type='perdue';  
+									}
+									else
+									{
+										$sex='chat';
+										$type='perdu'; 
+									}
+								?>
+
+								<div class="col-xs-12 col-md-3"><img src=<?=$annonce['url']?>  style=" width:150px; height: 140px; "  class="img-rounded" title='<?=$annonce['name'].', '.$sex.' '.$type.' le ' .$annonce['datePT'] ?>'></div>
+
+
+								<div class="col-xs-12 col-md-6 perduText">
+									<p><?='<span>'.'<strong>'.$annonce['name'].'</strong>'.'</span>'.', '.$sex.' <span style="color:red">'.$type.'</span> le '.$annonce['datePT']?></p>
+									<p><?='<strong>Lieu :</strong>'.$annonce['rue'].' '.$annonce['arrondissement'].' Marseille'?></p>
+								</div>
+								
+								<div class="col-xs-12 col-md-3 perduLien">
+								   
+									<a href='detail.php?idchat=<?=$annonce['idchat']?>&type=perdu' class="btn btn-danger subP " data_id="<?=$key?>"  >Voir cette annonce </a>
+								</div>
+							</div>
+                        </div>
+                        <?php  endforeach;?>
+					
+				
+			<?php endif;?>
+
+			<?php if (empty($annonceTs)!==true):?>
+				
+					<h2 class="row trouveL trouveH2 borderR">Les chats trouvés</h2>	
+					
+
+						<?php foreach($annonceTs as $key =>$annonce): ?>
+
+							<div class="container-fluid trouveBox">
+							<div class="row trouve">
+								<?php 
+									if($annonce['sex']=='femelle')
+									{
+										$sex='chatte';
+										$type='trouvée';
+									} 
+									else
+									{
+										$sex='chat';
+										$type='trouvé'; 
+									}
+								?>
+
+								<div class="col-xs-12 col-md-3"><img src=<?=$annonce['url']?> style=" width:150px; height: 140px; "  class="img-rounded" title='<?=$annonce['name'].', '.$sex.' '. $type.' le '.$annonce['datePT'] ?>'></div>
+
+
+								<div class="col-xs-12 col-md-6 trouveText">
+									<p><?= '<span>'.'<strong>'.$annonce['name'].'</strong>'.'</span>'.', '.$sex.' <span style="color:green;"> '.$type.'</span> le '.$annonce['datePT']?></p>
+									<p><?='<strong>Lieu :</strong>  '.$annonce['rue'].' '.$annonce['arrondissement'].' Marseille'?></p>
+								</div>
+								
+								<div class="col-xs-12 col-md-3 trouveLien">
+									<a href="detail.php?idchat=<?=$annonce['idchat']?>&type=trouve" class="btn btn-success ">
+										 Voir cette annonce
+									</a>
+								</div>
+							</div>
+						</div>	
+							
+                        <?php  endforeach;?>
+					
+				
+			<?php endif;?>
+			<?php if (empty($annonceRTs)!==true):?> 
+				
+					<h2 class="row retrouveL retrouveH2 borderR">Les chats retrouvés</h2>	
+					
+
+						<?php foreach($annonceRTs as $key =>$annonce): ?>
+
+					<div class="container-fluid retrouveBox">
+						<div class="row retrouve">
+								<?php 
+									if($annonce['sex']=='femelle')
+									{
+										$sex='chatte'; 
+										$type='retrouvée'; 
+									}
+									else
+									{
+										$sex='chat';
+										$type='retrouvé'; 
+									}
+								?>
+
+								<div class="col-xs-12 col-md-3"><img src=<?=$annonce['url']?> style= "width:150px; height: 140px;" title='<?=$annonce['name'].', '.$sex.' '.$type  ?>' class="img-rounded"></div>
+
+
+								<div class="col-xs-12 col-md-6 retrouveText">
+
+									<?php 
+									$dateModifier=$annonce['dateModifier'];
+									$dateRT=date("d/m/Y", strtotime($dateModifier)); ?>
+									<p><?= '<span>'.'<strong>'.$annonce['name'].'</strong>'.'</span>'.', '.$sex.' <span style="color:blue;"> '.$type.'</span> le '.$dateRT?></p>
+									<p><?='<strong>Lieu :</strong>  '.$annonce['rue'].' '.$annonce['arrondissement'].' Marseille'?></p>
+								</div>
+								
+								<div class="col-xs-12 col-md-3 retrouveLien">
+									<img src="img/happy.jpg" class="img-circle" style="width:100px; height: 92px;">
+								</div>
+					</div>
+							</div>      		
+                        <?php  endforeach;?>
+					
+				
+			<?php endif;?>
+
+		</section>
+		<div class="col-md-2"></div>
+	</div>
+
+			<!--L'endroit de publicité -->		
+	<div class="publicite col-xs-12 " id="p2" style="margin-top: -6PX;">
+					    <h2>Publicité</h2>
+					   <marquee direction="up"> 
+						<a href="<?=$publiciteDetail1[0]['lien']?>" ><img src="<?=$publiciteDetail1[0]['url']?>" class="img-rounded img-responsive"></a>
+					   </marquee>	
+					</div>
+					<?php if($publiciteDetail1[0]['url']=='null'):?>
+
+						<script >		
+					     document.getElementById("p2").style.display = "none";	
+						</script>
+						
+					<?php endif;?>	
+	</div>		
+		
+
+</div>

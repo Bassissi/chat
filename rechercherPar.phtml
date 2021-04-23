@@ -1,0 +1,50 @@
+<div class="container-fluid">
+	<div class=row>
+    <!-- on va utiliser ajax ici le renvenu de ajax dans div traitementC  -->
+		<div class="chercher col-xs-12 container-fluid textCenter rechercherDiv" id="traitementR">
+		       <div class="row">
+		    		<h2>Rechercher </h2>
+			   </div>
+			   <div class="row textCenter">
+			   	    <div class="col-md-4 "></div>
+				   	<div class="col-xs-12 col-md-2  motR">		    
+						<label for="par">
+							<strong>
+								 Veuillez chercher par
+							</strong>	 
+						</label>
+	                </div>
+					<!-- l'ajax surveille de select par --> 
+					<div class="col-xs-12 col-md-2  selectR">
+		                <select id="par" name="par" class="form-control">
+		                	<option value="rue">Rue</option>
+		                	<option value="arrondissement">Arrondissement</option>                	
+		                </select>
+	            	</div>
+	            	<div class="col-md-4"></div>
+			    </div>
+					<!-- on applique l'ajax par ce input suivantC-->
+				<div >	
+					<input type="submit" id="suivantR" value="Suivant" class="btn btn-primary">	
+				</div>			
+			   
+		
+
+		</div>
+
+			<!--L'endroit de publicité -->		
+		<div class="publicite col-xs-12 " id="p2" style="margin-top: -6PX;">
+					    <h2>Publicité</h2>
+					   <marquee direction="up"> 
+						<a href="<?=$publiciteDetail[0]['lien']?>" ><img src="<?=$publiciteDetail[0]['url']?>" class="img-rounded img-responsive"></a>
+					   </marquee>	
+					</div>
+					<?php if($publiciteDetail[0]['url']=='null'):?>
+
+						<script >		
+					     document.getElementById("p2").style.display = "none";	
+						</script>
+						
+					<?php endif;?>	
+		</div>		
+</div>				

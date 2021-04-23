@@ -1,0 +1,86 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : 127.0.0.1:3306
+-- Généré le :  Dim 01 sep. 2019 à 20:04
+-- Version du serveur :  10.2.23-MariaDB
+-- Version de PHP :  7.2.18
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de données :  `u791952179_chat`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `googlemape`
+--
+
+CREATE TABLE `googlemape` (
+  `id` int(11) NOT NULL,
+  `id_chat` int(11) NOT NULL,
+  `latitude` double NOT NULL,
+  `longitude` double NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `googlemape`
+--
+
+INSERT INTO `googlemape` (`id`, `id_chat`, `latitude`, `longitude`) VALUES
+(11, 102, 43.2580559, 5.384610299999963),
+(10, 86, 43.3170095, 5.431903199999965),
+(9, 85, 43.2944203, 5.5007567999999765),
+(8, 81, 43.3125677, 5.38741129999994),
+(12, 89, 43.30887169999999, 5.380587500000047),
+(13, 90, 43.34201880000001, 5.406204099999968),
+(14, 91, 43.2407286, 5.411258699999962),
+(15, 94, 43.31393389999999, 5.379731699999979),
+(16, 95, 43.2958915, 5.393245100000058),
+(17, 96, 43.3269481, 5.432119899999975),
+(18, 103, 43.28086579999999, 5.388607500000035),
+(19, 99, 43.353613, 5.341915999999969),
+(20, 100, 43.259407, 5.395956999999953),
+(21, 104, 43.2876725, 5.3874424000000545),
+(22, 105, 43.2805107, 5.389778299999989),
+(23, 107, 43.2805107, 5.389778299999989),
+(24, 108, 43.3045006, 5.401276899999971),
+(25, 110, 43.3180319, 5.4098306999999295),
+(26, 111, 43.264532, 5.373774000000026);
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `googlemape`
+--
+ALTER TABLE `googlemape`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `googlemape`
+--
+ALTER TABLE `googlemape`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

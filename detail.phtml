@@ -1,0 +1,247 @@
+
+<div >
+	<div class="row info">
+        <div class="col-xs-12 col-md-5 ">
+			<div id="img1" class="img1">
+
+				<img  src=<?=$annonceDetail[0]['url']?> style=" width:100%;" title='<?=$annonceDetail[0]['name'].', '.$sex.' '.$typeA.' le ' .$annonceDetail[0]['datePT'] ?>'>
+			</div>
+
+			<div class="contact">
+			
+				 	<h5><?=$messageContact?></h5>
+				 	<p>
+				 		   Téléphone :
+				 		   <span>  <?=$annonceDetail[0]['phone']?></span>
+				 	</p>
+			
+			</div>
+
+	    </div>   
+			
+        
+		<div class="col-xs-12 col-md-7 detail" >
+				<div  style="width: 100%; " >
+					<h4 id="cap" ><?=$annonceDetail[0]['name'].', '?> <?=$sex.' '?><?=$typeA?> </h4>
+					
+						<div class="rowD" >
+							<label class="col-xs-4">Publié le </label>
+							<td class="col-xs-8"><?=$datePublie?></td>
+						</div>
+						<div class="rowD" >
+							<label class="col-xs-4">Sexe </label>
+							<td class="col-xs-8"><?php if($annonceDetail[0]['sex']=='male') echo 'mâle'; else echo $annonceDetail[0]['sex']; ?></td>
+						</div>
+						<div class="rowD" >
+							<label class="col-xs-4">Race </label>
+							<td class="col-xs-8"><span id=Minuscule><?=$annonceDetail[0]['race']?></span></td>
+						</div>
+						<div class="rowD" >
+							<label class="col-xs-4">Couleur </label>
+							<td><?=$annonceDetail[0]['couleurs']?></td class="col-xs-8">
+						</div>
+
+						<div class="rowD" >
+							<label class="col-xs-4">Poils </label>
+							<td class="col-xs-8"><?=$annonceDetail[0]['poils']?></td>
+						</div>
+						<div class="rowD" >
+							<label class="col-xs-4">Pelage </label>
+							<td class="col-xs-8"><?=$annonceDetail[0]['pelage']?></td>
+						</div>
+
+						<div class="rowD" >
+							<label class="col-xs-4">Castré/Stérilisé </label>
+							<td class="col-xs-8"><?=$annonceDetail[0]['castre']?></td>
+						</div>
+						
+						<div class="rowD" >
+							<label class="col-xs-4"><?=$typeA.' le'?> </label>
+							<td class="col-xs-8"><?=$annonceDetail[0]['datePT']?></td>
+						</div>
+						<div class="rowD" >
+							<label class="col-xs-4"><?=$typeA.' à'?> </label>
+							<td class="col-xs-8" >
+								<?=$annonceDetail[0]['rue'].'<br>'?>
+								<?=$annonceDetail[0]['arrondissement'].' Marseille'?>
+								
+							</td>
+						</div>
+						<div class="rowD" >
+					
+							<td class="col-xs-8" colspan="2"  id="backColor" >
+								<?php 
+								if(empty($annonceDetail[0]['description'])==false)
+								{
+									echo '<strong >'."Plus d'information sur cette annonce :".'</strong>'; 
+									echo '<p>'. $annonceDetail[0]['description'].'</p>'; 
+								}
+								else echo "Il n'y a pas d'informations complémentaires."; 
+								 ?>
+								 	
+							</td>
+						</div>					
+																																										
+					
+				</div>
+			</div>
+    </div>
+	  
+    <div class="row info operation ">
+    	
+
+ 			    <div class="col-md-1"></div>
+ 				<div class="col-xs-12 col-md-3 supprimerD"> 
+					<a href="supprimer.php?idchat=<?=$idchat?>&messageS=<?=$messageS?>&type=<?=$type?>" id="supprimerVA"> <span class="glyphicon glyphicon-trash"></span>
+					Supprimer votre annonce</a>
+				</div>
+				<div class="col-xs-12 col-md-3 modifierD">
+					<a href="modifier.php?idchat=<?=$idchat?>&type=<?=$type?>" id="modifierVA"> <span class="glyphicon glyphicon-pencil"></span>Modifier votre annonce</a>
+				</div>
+				<div class="col-xs-12 col-md-3 imprimerD">
+					<a href="imprimer.php?idchat=<?=$idchat?>&type=<?=$type?>" target="_blank" id="imprimerVA"><span class="glyphicon glyphicon-print"></span>Imprimer votre annonce</a>
+				</div>
+           
+
+    </div>
+
+
+
+
+	    <!-- cet endroit pour afficher la carte de gougle map pour adresser le chat -->
+	    <div class="row info " id='googleAffiche'>
+	    	<?php 
+	           $googlemape=Googlemape::chercher($annonceDetail[0]['idchat']);
+	        ?>
+
+	    	<?php if($googlemape!=null):?> 
+
+		         <div id="googleMap" style="width:100%;height:400px;" ></div>
+
+				<script>
+				function myMap() {
+				var mapProp= {
+				  center:new google.maps.LatLng(<?=$googlemape[0]['latitude'];?>,<?=$googlemape[0]['longitude'];?>),
+				  zoom:18,
+	              mapTypeId: google.maps.MapTypeId.ROADMAP
+				};
+				var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+	           
+	            var marker = new google.maps.Marker({
+				position: new google.maps.LatLng(<?=$googlemape[0]['latitude'];?>,<?=$googlemape[0]['longitude'];?>),
+				//icon :'img/cat.png'		
+			              });
+
+	          marker.setMap(map);
+
+				}
+
+				</script>
+
+				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBK3q2roaboLSWVnpneLb863Gl73xMNVNk&callback=myMap"></script>
+			
+	        <?php endif;?>
+
+
+	    </div>
+
+
+	    
+
+	   
+	   <!-- cett partie pour les commentaires -->
+	 <div class="row info " style="margin-bottom: 0; ">
+		   <!-- les commentaires sur cette annonce -->
+		   <span id="id_chat" style="display: none;"><?=$annonceDetail[0]['idchat']?></span>
+		   <div class="col-xs-12" id="titreC">
+		   		<h3>Commentaires sur cette annonce</h3>
+		   </div>
+		   <div class="col-xs-12" id="paragrapheC">
+		   		<p>Vous pouvez laisser un message à la personne ayant publié cette annonce en utilisant le formulaire ci-dessous.</p>
+			</div>
+		   <div id="commentairesDiv" class="col-xs-12" >
+		   	<!-- le revenu de l'ajax-->
+
+		   </div>
+		   
+		   <!-- le formulaire de commentaire -->
+		   <div id="commentaireF" class="col-xs-12">
+			   	<form >
+			   	<div class="row">
+				   	 <h3 id="hfCommentaire">Publiez un message</h3>
+				</div> 
+				<div class="row paddingFCommentaire">
+					   	 
+					   	 <div class="col-xs-12 col-md-4 textRightF">
+					   	 	<label for="pseudo">Pseudo* :</label>
+					   	 </div>
+					   	 <div class="col-xs-12 col-md-4">
+					   	 	<input type="text" name="pseudo" id="pseudo" size="25" maxlength="25" minlength="3"  required class="form-control" >
+					   	 </div>
+					   	 <div class="col-md-4"></div>
+				</div>
+				<div class="row paddingFCommentaire">	 
+				   	 
+				   	 <div class="col-xs-12 col-md-4 textRightF">
+				   	 	<label for="mail">E-mail* :</label>
+				   	 </div>
+				   	 <div class="col-xs-12 col-md-4">	
+				   	 	<input type="email" name="mail" id="mail" size="40" maxlength="40" required class="form-control">
+				   	  </div>
+				   	  <div class="col-md-4"></div>
+				</div>
+				<div class="row paddingFCommentaire">	  
+				   	  
+				   	  <div class="col-xs-12 col-md-4 textRightF">
+				   	 	<label for="commentaire">Votre commentaire* :</label>
+				   	  </div>
+				   	  <div class="col-xs-12 col-md-4">	
+				   	 	<textarea size='250' maxlength="250" required="" id="commentaire" class="form-control " style="height: 160px;"></textarea>
+			          </div>
+			          <div class="col-md-4"></div>
+			    </div> 
+			     <div class="row"> 
+
+			      	<div class="col-xs-6"></div> 
+			      	<div class="col-xs-4">
+			   		 	<a href="#commentairesDiv" name="publier" id="publier" class="btn btn-primary">Publier</a> 
+			   		</div>
+			   		<div class="col-xs-4"> 	
+
+			    </div>  
+		       </form>  
+		       
+		   </div>
+	</div>
+
+
+
+	<!--L'endroit de publicité -->		
+	<div class="row" >
+		<div class="publicite col-xs-12 " id="p2" style="margin-top: -6PX;">
+		    <h2 class="changerColor">Publicité</h2>
+		    <marquee direction="up">
+			   <a href="<?=$publiciteDetail[0]['lien']?>" ><img src="<?=$publiciteDetail[0]['url']?>" class="img-rounded img-responsive"></a>	
+			</marquee>
+		</div>
+		<?php if($publiciteDetail[0]['url']=='null'):?>
+
+			<script >		
+		     document.getElementById("p2").style.display = "none";	
+			</script>
+			
+		<?php endif;?>
+  	</div>	
+			<?php if (preg_match('#trouvé#',$typeA)):?>
+	   
+				<script >		
+			     document.getElementById("cap").style="background-color:#69C864;";
+			      document.getElementById("tr").style.border="2px solid green";
+			      document.getElementById("talblCTr").style.border="2px solid green";
+			     	
+				</script>	
+			<?php endif;?>		
+
+</div>
+

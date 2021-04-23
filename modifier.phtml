@@ -1,0 +1,47 @@
+<div class="container-fluid">
+	        <!-- messages:-->
+    <div class="message row">
+	        	
+        <?php 
+      
+             if(empty($messageE)==false)
+             	echo '<p style="color:red;">'.$messageE.'</p>'; 
+        ?>
+	</div>	
+
+	<div class="modifierM row">
+		<form action="modifier.php?idchat=<?=$idchat?>&type=<?=$type?>" method="POST">
+			<h2 id="h3M" class="col-xs-12 modifierH textCenter">Modifier votre annonce</h2>
+            <div class="col-md-2"></div>
+            <div class="col-xs-12 col-md-4 labelM">
+				<label >Votre date de naissance : </label>
+            </div>
+            <div class="col-xs-12 col-md-4 dateM">
+				<input type="date" name="dateNaissance" class="form-control">
+		    </div>
+			<div class="col-md-2"></div>
+			<div class="col-xs-6"></div>
+			<div class="col-xs-4">
+				<input   type="submit" name="modifier" value="Modifier" class="btn btn-success">
+            </div>
+            <div class="col-xs-2"></div>
+		</form>
+	</div>
+
+	<!--L'endroit de publicité -->		
+	<div class="row">
+		<div class="publicite col-xs-12 " id="p2" style="margin-top: -6PX;">
+		    <h2>Publicité</h2>
+		    <marquee direction="up">
+			   <a href="<?=$publiciteDetail[0]['lien']?>" ><img src="<?=$publiciteDetail[0]['url']?>" class="img-rounded img-responsive"></a>	
+			</marquee>
+		</div>
+		<?php if($publiciteDetail[0]['url']=='null'):?>
+
+			<script >		
+		     document.getElementById("p2").style.display = "none";	
+			</script>
+			
+		<?php endif;?>
+  	</div>	
+</div>	        

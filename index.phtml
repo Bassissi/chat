@@ -1,0 +1,248 @@
+
+            <!--dive on explique à quoi le set sert -->
+ <div class="container-fluid">
+ 	<div class="row">
+   	<p class="col-xs-12" id="pA">Sur ce site, vous pouvez  gratuitement  publier des annonces chats perdus ou chats trouvés en une minute, sans créer un compte, dans une seule ville de Marseille .</p>
+   </div>
+ </div>
+<section class="container-fluid outils" >
+	<section class="row">
+		
+		<div class="col-xs-12 col-md-6 perduL titre"  >
+			<a href="ajouter.php?type=perdu" title="Publiez une annonce pour un chat perdu " class="col-xs-12 col-md-12 "> J'ai perdu mon chat  </a>
+		
+			<?php 
+				$counter=0; 
+				foreach ($annoncePs as $key)
+				$counter+=1; 
+			    if($counter==1|$counter==0)
+				    	$message=$counter.' chat perdu'; 
+				else
+				    	$message=$counter.' chats perdus';
+	        ?>
+	        <?php if($counter>=1):?>
+	        	<a href="perdus.php" class="col-xs-12 col-md-12 "><?=$message?></a>
+	        <?php else: ?>
+	        	<?=$message?>
+	        <?php endif;?>	        
+         
+		</div>
+
+
+         	
+		<div class="col-xs-12 col-md-6 trouveL titre" >
+			<a href="ajouter.php?type=trouve" title="Publiez une annonce pour un chat trouvé " class="col-xs-12 col-md-12 "> J'ai trouvé un chat  </a>
+			<?php 
+				$counter=0; 
+				foreach ($annonceTs as $key)
+				$counter+=1; 
+			    if($counter==1|$counter==0)
+			    	$message=$counter.' chat trouvé'; 
+			    else
+			    	$message=$counter.' chats trouvés';
+            ?>
+            <?php if($counter>=1):?>
+	        	<a href="trouves.php" class="col-xs-12 col-md-12 "><?=$message?></a>
+	        <?php else: ?>
+	        	<?=$message?>
+	        <?php endif;?>
+		</div>
+     <div class="col-xs-0 col-md-1" ></div>
+    </section>
+
+    <div class="row">
+
+
+       <!-- On cherche nos annonces-->
+
+		<section class="col-xs-12 col-md-8 container-fluid">
+			<?php if (empty($annoncePs)!==true):?>
+				
+					 <h2 class="row perduL perduH2" >Les chats perdus</h2>	
+					
+
+						<?php foreach($annoncePs as $key =>$annonce): ?>
+                         <div class="container-fluid perduBox">
+							<div class=" divP row perdu "  data_id="<?=$key?>" id="divP<?=$key?>" >
+								<?php 
+									if($annonce['sex']=='femelle')
+									{
+										$sex='chatte';
+										$type='perdue';  
+									}
+									else
+									{
+										$sex='chat';
+										$type='perdu'; 
+									}
+								?>
+
+								<div class="col-xs-12 col-md-3"><img src=<?=$annonce['url']?>  style=" width:150px; height: 140px; "  class="img-rounded" title='<?=$annonce['name'].', '.$sex.' '.$type.' le ' .$annonce['datePT'] ?>'></div>
+
+
+								<div class="col-xs-12 col-md-6 perduText">
+									<p><?='<span>'.'<strong>'.$annonce['name'].'</strong>'.'</span>'.', '.$sex.' <span style="color:red">'.$type.'</span> le '.$annonce['datePT']?></p>
+									<p><?='<strong>Lieu :</strong>'.$annonce['rue'].' '.$annonce['arrondissement'].' Marseille'?></p>
+								</div>
+								
+								<div class="col-xs-12 col-md-3 perduLien">
+								   
+									<a href='detail.php?idchat=<?=$annonce['idchat']?>&type=perdu' class="btn btn-danger subP " data_id="<?=$key?>"  >Voir cette annonce </a>
+								</div>
+							</div>
+                        </div>
+                        <?php  endforeach;?>
+					
+				
+			<?php endif;?>
+
+			<?php if (empty($annonceTs)!==true):?>
+				
+					<h2 class="row trouveL trouveH2">Les chats trouvés</h2>	
+					
+
+						<?php foreach($annonceTs as $key =>$annonce): ?>
+
+							<div class="container-fluid trouveBox">
+							<div class="row trouve" data_id="<?=$key?>" id="divT<?=$key?>">
+								<?php 
+									if($annonce['sex']=='femelle')
+									{
+										$sex='chatte';
+										$type='trouvée';
+									} 
+									else
+									{
+										$sex='chat';
+										$type='trouvé'; 
+									}
+								?>
+
+								<div class="col-xs-12 col-md-3"><img src=<?=$annonce['url']?> style=" width:150px; height: 140px; "  class="img-rounded" title='<?=$annonce['name'].', '.$sex.' '. $type.' le '.$annonce['datePT'] ?>'></div>
+
+
+								<div class="col-xs-12 col-md-6 trouveText">
+									<p><?= '<span>'.'<strong>'.$annonce['name'].'</strong>'.'</span>'.', '.$sex.' <span style="color:green;"> '.$type.'</span> le '.$annonce['datePT']?></p>
+									<p><?='<strong>Lieu :</strong>  '.$annonce['rue'].' '.$annonce['arrondissement'].' Marseille'?></p>
+								</div>
+								
+								<div class="col-xs-12 col-md-3 trouveLien">
+									<a href="detail.php?idchat=<?=$annonce['idchat']?>&type=trouve" class="btn btn-success subT" data_id="<?=$key?>">
+										 Voir cette annonce
+									</a>
+								</div>
+							</div>
+						</div>	
+							
+                        <?php  endforeach;?>
+					
+				
+			<?php endif;?>
+			<?php if (empty($annonceRTs)!==true):?> 
+				
+					<h2 class="row retrouveL retrouveH2">Les chats retrouvés</h2>	
+					
+
+						<?php foreach($annonceRTs as $key =>$annonce): ?>
+
+					<div class="container-fluid retrouveBox">
+						<div class="row retrouve">
+								<?php 
+									if($annonce['sex']=='femelle')
+									{
+										$sex='chatte'; 
+										$type='retrouvée'; 
+									}
+									else
+									{
+										$sex='chat';
+										$type='retrouvé'; 
+									}
+								?>
+
+								<div class="col-xs-12 col-md-3"><img src=<?=$annonce['url']?> style= "width:150px; height: 140px;" title='<?=$annonce['name'].', '.$sex.' '.$type  ?>' class="img-rounded"></div>
+
+
+								<div class="col-xs-12 col-md-6 retrouveText">
+
+									<?php 
+									$dateModifier=$annonce['dateModifier'];
+									$dateRT=date("d/m/Y", strtotime($dateModifier)); ?>
+									<p><?= '<span>'.'<strong>'.$annonce['name'].'</strong>'.'</span>'.', '.$sex.' <span style="color:blue;"> '.$type.'</span> le '.$dateRT?></p>
+									<p><?='<strong>Lieu :</strong>  '.$annonce['rue'].' '.$annonce['arrondissement'].' Marseille'?></p>
+								</div>
+								
+								<div class="col-xs-12 col-md-3 retrouveLien">
+									<img src="img/happy.jpg" class="img-circle" style="width:100px; height: 92px;">
+								</div>
+					</div>
+							</div>      		
+                        <?php  endforeach;?>
+					
+				
+			<?php endif;?>				
+		
+		</section>
+		
+		     <!-- Asid-->
+	 <div class="col-xs-12 col-md-4 container-fluid divA" > 
+     
+
+        <div class="row rechercherAR" >	
+			<?php include "rechercherRAside.phtml" ?>			
+		</div>
+		<div class="row rechercherAA">
+			<?php include "rechercherAside.phtml" ?>
+		</div>
+
+
+	</div>
+		<!--L'endroit de publicité -->					
+       
+		<div id="p1" class=" row p1">
+			<a href="<?=$publiciteDetail[0]['lien']?>">
+				<h2 class="col-xs-12" > Publicité</h2>		
+			</a>				
+				    <!--loop-->
+				
+					<video id="vid" controls loop class="col-xs-12"  width="300" height="300" controls="true" poster="video_poster.jpg" webkit-playsinline="true" playsinline="true" autoplay="true" muted="true" data-weborama-videoplayer="true" preload="metadata"  >						
+					<source src="<?=$publiciteDetail[0]['url']?>" type="video/mp4">
+					
+					</video>
+				<a href="<?=$publiciteDetail[0]['lien']?>" id="allerV">	
+				</a>
+				
+		</div> 
+		   
+		<?php if($publiciteDetail[0]['url']=='null'):?>
+
+			<script >		
+		     document.getElementById("p1").style.display = "none";	
+			</script>
+			
+		<?php endif;?>	
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        </script>
+      <script type="text/javascript">
+      	function allerV(){
+      //	window.location.replace('www.google.co.in');
+       $(location).attr('href', $('#allerV').attr('href'));
+       console.log($('#allerV').attr('href'));
+		
+		}
+		$('#p1').click(allerV);
+		
+      </script>    		
+	
+
+	</div>
+</div>
+
+
+	
+
+
+
+
+
+

@@ -1,0 +1,140 @@
+<?php if($compteTous!=null && $compteTous>=1 && $chatsPT!=null):?>
+
+<div class="container">
+        <!-- On affiche commbien de photos chats perdus ou trouvés qu'on a -->
+        <div class="row textCenter titrePhotos ">
+			    <h2 >Nous avons <?=$compteTous?> photos de chats perdus ou trouvés</h2>
+
+        </div>
+		<div class="row textCenter">
+			        <!-- on afficher les photos chats perdus ou trouvé-->
+				   	<meta name="viewport" content="width=device-width, initial-scale=1">
+					<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+					<style>
+					.mySlides {display:none;}
+					</style>	
+		    <div class="col-xs-12 col-md-2"></div>			        
+			<div class="w3-content w3-display-container col-xs-12 col-md-8 divPhotos">
+		           <?php $directionT='-bottomleft';?>
+
+			       <?php foreach($chatsPT as $kay => $value):?> 
+
+						<div class="w3-display-container mySlides ">
+					  
+				             <?php 
+				               
+				              
+
+					             if($value['sex']=='femelle' && $value['type']=='perdu') 
+					             {
+					             	$name='chatte perdue'; 
+					             }
+
+					             if($value['sex']=='male' && $value['type']=='perdu') 
+					             {
+					             	$name='chat perdu'; 
+					             }
+					             if($value['sex']=='femelle' && $value['type']=='trouve') 
+					             {
+					             	$name='chatte trouvée'; 
+					             }	             
+					             if($value['sex']=='male' && $value['type']=='trouve') 
+					             {
+					             	$name='chat trouvé'; 
+					             }             
+			                    $petiteD=$value['name'].', '.$name.' le '.$value['datePT'].' au '.$value['arrondissement']; 
+				            ?>
+						 
+				          <a href="detail.php?idchat=<?=$value['idchat']?>&type=<?=$value['type']?>">
+				         	<img class="img-responsive imgPhotos"  src="<?=$value['url']?>"  title="<?=$petiteD?>" >
+				          </a>
+				           <div class="w3-display<?=$directionT?> w3-large w3-container w3-padding-16 w3-black changeT" style="background-color: #8B0000 !important; border-radius: 5px; "> 
+				           <a href="detail.php?idchat=<?=$value['idchat']?>&type=<?=$value['type']?>" style="font-size: 12px;  " ><?=$petiteD?></a>
+			               </div>
+
+							<?php
+			                  for($i=1;$i<3;$i++)
+			                  {
+							     if($directionT=='-bottomleft')
+								     { 
+								     	$directionT='-bottomright'; 
+								     	break;
+								     }
+
+							     if($directionT=='-bottomright')
+								     {
+								      		$directionT='-topleft';
+								      		break; 
+								     } 
+
+							     if($directionT=='-topleft')
+								     {
+								     	 $directionT='-topright';
+								     	 break; 
+								     }
+
+							     if($directionT=='-topright')
+								     {
+								      $directionT='-middle';
+								        break; 
+								     } 
+							     if($directionT=='-middle')
+								     {
+								      $directionT='-bottomleft';
+								         break; 
+								     } 
+			                  }
+							?>
+					
+					</div>	
+			   <?php endforeach;?>
+			   
+			   <div class="col-xs-12 col-md-2"></div>		
+
+				<button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+				<button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+		    </div>
+
+			<script>
+			var slideIndex = 1;
+			showDivs(slideIndex);
+
+			function plusDivs(n) {
+			  showDivs(slideIndex += n);
+			}
+
+			function showDivs(n) {
+			  var i;
+			  var x = document.getElementsByClassName("mySlides");
+			  if (n > x.length) {slideIndex = 1}
+			  if (n < 1) {slideIndex = x.length}
+			  for (i = 0; i < x.length; i++) {
+			     x[i].style.display = "none";  
+
+			  }
+			  x[slideIndex-1].style.display = "block";  
+			  
+
+			}
+			</script>
+    </div>
+				<!--L'endroit de publicité -->
+						
+	<div class="publicite col-xs-12 pubPhotos " id="p2" style="margin-top: -6PX;">
+					    <h2>Publicité</h2>
+					   <marquee direction="up"> 
+						<a href="<?=$publiciteDetail[0]['lien']?>" ><img src="<?=$publiciteDetail[0]['url']?>" class="img-rounded img-responsive"></a>
+					   </marquee>	
+					</div>
+					<?php if($publiciteDetail[0]['url']=='null'):?>
+
+						<script >		
+					     document.getElementById("p2").style.display = "none";	
+						</script>
+						
+					<?php endif;?>			
+</div>	
+<?php else:?>
+<p>Il n'y a pas de photos!</p>
+<?php endif;?>
+

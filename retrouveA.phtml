@@ -1,0 +1,92 @@
+
+			        <!-- messages:-->
+	    <div class="messageE message">
+	       
+             <?php         
+         
+             if(empty($_SESSION['messageSA'])==false)
+             	echo '<p >'.$_SESSION['messageSA'].'</p>'; 
+
+	             $_SESSION['messageSA']=null; 
+	        
+	                     
+             ?>
+
+	    </div>
+<div class="container-fluid">
+		<?php if (empty($annonceRTs)!==true):?> 
+					<?php 
+						$counter=0; 
+						foreach ($annonceRTs as $key)
+						$counter+=1; 
+					    if($counter==1|$counter==0)
+						    	$message=$counter.' chat retrouvé'; 
+						else
+						    	$message=$counter.' chats retrouvés';
+			        ?>
+				
+					<h2 class="row retrouveL retrouveH2 textCenter">
+						<?php if($counter>=0):?>	       
+				        	<?=$message?> 
+				        <?php endif;?>
+					</h2>	
+					
+
+						<?php foreach($annonceRTs as $key =>$annonce): ?>
+
+					<div class="container-fluid retrouveBox">
+						<div class="row retrouve">
+								<?php 
+									if($annonce['sex']=='femelle')
+									{
+										$sex='chatte'; 
+										$type='retrouvée'; 
+									}
+									else
+									{
+										$sex='chat';
+										$type='retrouvé'; 
+									}
+								?>
+
+								<div class="col-xs-12 col-md-3"><img src=<?=$annonce['url']?> style= "width:150px; height: 140px;" title='<?=$annonce['name'].', '.$sex.' '.$type  ?>' class="img-rounded"></div>
+
+
+								<div class="col-xs-12 col-md-6 retrouveText">
+
+									<?php 
+									$dateModifier=$annonce['dateModifier'];
+									$dateRT=date("d/m/Y", strtotime($dateModifier)); ?>
+									<p><?= '<span>'.'<strong>'.$annonce['name'].'</strong>'.'</span>'.', '.$sex.' <span style="color:blue;"> '.$type.'</span> le '.$dateRT?></p>
+									<p><?='<strong>Lieu :</strong>  '.$annonce['rue'].' '.$annonce['arrondissement'].' Marseille'?></p>
+								</div>
+								
+								<div class="col-xs-12 col-md-3 perduLien">
+								   
+									<a href="#" onclick="confirmation(<?=$annonce['idchat']?>)" class="btn btn-danger subP " data_id="<?=$key?>"  >Supprimer </a>
+								</div>
+					</div>
+							</div>      		
+                        <?php  endforeach;?>
+					
+				
+			<?php endif;?>				
+
+
+
+</div>
+
+
+
+
+
+   <script type="text/javascript">
+   	 function confirmation( id )
+   	 	 {
+        
+			if (confirm("Voulez-vous vraiment supprimer cette annonce ?" ))
+				 {
+					window.location.href = "supprimerA.php?id="+id+"&type=<?=$annonce['type']?>"; 
+				 }
+		}
+   </script>  

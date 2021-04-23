@@ -1,0 +1,56 @@
+<div class="container-fluid">
+	<div class=row>
+		<div class="chercher container-fluid textCenter rechercherDiv" >
+		    <div class="row">   
+		    	<h2>Rechercher par arrondissement</h2>
+		    </div>	
+				<form action="rechercher.php" method="POST">
+			<div class="row">
+				<div class="col-xs-12">    
+					<label for="arrondissement">
+						<strong style="color: #660000;">
+							 Choisissez votre arrondissement
+						</strong>	 
+					</label>
+				</div>	
+			 	 <div class="col-md-4"></div>
+			 	 <div class="col-xs-12 col-md-4">				
+					<select name="arrondissement" class="form-control">
+						<?php for($i=13001;$i<13017;$i++):?>
+							<option value=<?=$i?>>
+								<?=$i?>
+							</option>
+						<?php endfor;?>	
+					</select>
+				</div>
+				<div class="col-md-4"></div>	
+			</div>
+			<div class="row divControl">
+					<input type="submit" name="chercher" value="Rechercher" class="btn btn-primary">
+			</div>					
+			   </form>
+		
+			<?php if(empty($messageR)==false): ?>
+				<div class="message" style="padding-top: 10px;">
+					<p><?=$messageR?></p>
+				</div>
+			<?php endif; ?>	
+		</div>
+    </div>
+			<!--L'endroit de publicité -->		
+	<div class="publicite col-xs-12 " id="p2" style="margin-top: -6PX;">
+					    <h2>Publicité</h2>
+					   <marquee direction="up"> 
+						<a href="<?=$publiciteDetail[0]['lien']?>" ><img src="<?=$publiciteDetail[0]['url']?>" class="img-rounded img-responsive"></a>
+					   </marquee>	
+					</div>
+					<?php if($publiciteDetail[0]['url']=='null'):?>
+
+						<script >		
+					     document.getElementById("p2").style.display = "none";	
+						</script>
+						
+					<?php endif;?>	
+	</div>		
+
+</div>

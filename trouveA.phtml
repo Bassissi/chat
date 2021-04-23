@@ -1,0 +1,75 @@
+
+
+
+			        <!-- messages:-->
+<div class="messageE message">
+	       
+             <?php         
+         
+             if(empty($_SESSION['messageSA'])==false)
+             	echo '<p >'.$_SESSION['messageSA'].'</p>'; 
+
+	             $_SESSION['messageSA']=null; 
+	        
+	                     
+             ?>
+
+</div>	
+<section class=" container-fluid">
+
+	<?php if (empty($annonceTs)!==true):?>
+						<?php 
+							$counter=0; 
+							foreach ($annonceTs as $key)
+							$counter+=1; 
+						    if($counter==1|$counter==0)
+							    	$message=$counter.' chat trouvé'; 
+							else
+							    	$message=$counter.' chats trouvés';
+				        ?>	
+					
+						<h2 class="row trouveL trouveH2 textCenter">
+							<?php if($counter>=0):?>	       
+					        	Nous avons <?=$message?> 
+					        <?php endif;?>	
+						</h2>	
+						
+
+							<?php foreach($annonceTs as $key =>$annonce): ?>
+
+								<div class="container-fluid trouveBox textCenter">
+								<div class="row trouve" data_id="<?=$key?>" id="divT<?=$key?>">
+									<?php 
+										if($annonce['sex']=='femelle')
+										{
+											$sex='chatte';
+											$type='trouvée';
+										} 
+										else
+										{
+											$sex='chat';
+											$type='trouvé'; 
+										}
+									?>
+
+									<div class="col-xs-12 col-md-3"><img src=<?=$annonce['url']?> style=" width:150px; height: 140px; "  class="img-rounded" title='<?=$annonce['name'].', '.$sex.' '. $type.' le '.$annonce['datePT'] ?>'></div>
+
+
+									<div class="col-xs-12 col-md-6 trouveText">
+										<p><?= '<span>'.'<strong>'.$annonce['name'].'</strong>'.'</span>'.', '.$sex.' <span style="color:green;"> '.$type.'</span> le '.$annonce['datePT']?></p>
+										<p><?='<strong>Lieu :</strong>  '.$annonce['rue'].' '.$annonce['arrondissement'].' Marseille'?></p>
+									</div>
+									
+									<div class="col-xs-12 col-md-3 trouveLien">
+										<a href="detailA.php?idchat=<?=$annonce['idchat']?>&type=trouve"  class="btn btn-success subT" data_id="<?=$key?>">
+											 Voir cette annonce
+										</a>
+									</div>
+								</div>
+							</div>	
+								
+	                        <?php  endforeach;?>
+						
+					
+				<?php endif;?>
+</section>				

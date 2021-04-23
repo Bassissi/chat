@@ -1,0 +1,39 @@
+	<center>
+		<p  id="phraseV" style="display: none;">Nous avons </p>	
+	</center>
+	<center class="visiteur" id="infosV" style="display: none;">
+
+	    <h6>
+	    	<strong>
+			 <?=$cVisiteur?> visiteurs
+			</strong> 
+		</h6>	
+		<img src="img/bonhomme.png" class="bonhomme" >
+        
+	</center>
+		
+
+	<script type="text/javascript">
+		
+		      function afficherT(id, temps)
+		{
+			setTimeout(function(){
+
+				$(id).css("display", 'block'); 
+				
+			}, temps); 
+		}
+		function afficherNone(id,temps)
+		{
+			setTimeout(function(){
+
+				$(id).css("display", 'none'); 
+				
+			}, temps); 
+		}
+	afficherT('#phraseV',2000); 
+	afficherNone('#phraseV',3000); 
+	afficherT('#infosV',4000); 
+
+	</script>		
+

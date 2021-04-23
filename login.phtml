@@ -1,0 +1,64 @@
+
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/styleAdmin.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+<link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Fira+Sans|Fjalla+One|Merriweather|Roboto+Mono|Roboto+Slab&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans|Shrikhand" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+
+<main class="login">
+	<div class=" margin0">
+	  <div class="messageE message" >
+				<?php 
+	            if(empty($erreur)==false)
+	            	foreach ($erreur as $key => $value)
+	            	{
+	            		echo '<p>'.$value.'</p>'; 
+	            	}
+	            	
+				?>
+	  </div>
+	</div>  
+	<div class=" formAdmin margin0"> 
+
+			<form method="POST" action="login.php" id="login">
+			 	<h2>Administrateur</h2>
+			 	<div class="row rowFormulair " style="margin-left: 0; margin-right: 0;">
+				 	<div class="col-sm-2"></div>
+				 	<div class="col-xs-12 col-sm-3 textRight">
+				 		<label for="identifiant" id="identifiant" >Identifiant</label>
+				 	</div>
+				 	<div class="col-xs-12 col-sm-3">
+				 		<input type="text" name="id" minlength="19" maxlength="19" class="form-control">
+				 	</div>			 	
+				 	<div class="col-sm-4"></div>
+			 	</div>
+			 	<div class="row rowFormulair" style="margin-left: 0; margin-right: 0;">
+	                <div class="col-sm-2"></div>
+	                <div class="col-xs-12 col-sm-3 textRight">
+				 		<label for="password">Mot de passe</label>
+				 	</div>
+				 	<div class="col-xs-12 col-sm-3">	
+				 		<input type="password" name="password" maxlength="12" minlength="6" class="form-control">
+				 	</div>
+				 	<div class="col-sm-4"></div>
+				</div> 	
+			 	<div class="row" style="margin-left: 0; margin-right: 0;">
+			 		<div class="col-sm-2"></div>
+					<div class="col-xs-4"></div>
+					<div class="col-xs-4">
+			 			<input type="submit" name="submit" value="se connecter" class="btn btn-success">
+			 		</div>
+			 		<div class="col-xs-2">	
+			 	</div>	
+			</form>
+		  
+
+	</div>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        </script>
+        <script type="text/javascript" src="javascript/javascript.js"></script>		
+</main>

@@ -1,0 +1,33 @@
+
+
+	<div class="container-fluid div2" >
+	    
+	    	<h2 class="row" id="divRR"> Rechercher par rue</h2>
+	    	<div class="form-group col-xs-12 row ">
+				<form action="rechercherR.php" method="POST">
+				  		
+					<label for="rue" class="col-xs-12">
+						<span>Ecrivez le nom de la rue</span> 
+					</label>
+					<!-- on suveille l'input de la rue par ajax -->	
+					<div class="col-xs-12">
+
+		                <input type="text" name="rue"  id="rue" size="50" minlength="4"  maxlength="50" list="RPL" required class="form-control">
+		                <!-- On met le resutat d'ajax ici pour proposer au client les noms des rues-->
+		                <datalist id="RPL"></datalist>
+					</div>
+					
+						<div class="col-xs-4"></div>
+						<div class="col-xs-4 sub2">
+							<input type="submit" name="chercherR" value="Rechercher" class="btn btn-primary" id="subR" >
+						</div>
+						<div class="col-xs-4"></div>
+
+					
+							
+				</form>
+			</div>	
+	
+
+	</div>
+

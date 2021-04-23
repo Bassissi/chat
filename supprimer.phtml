@@ -1,0 +1,93 @@
+<div class="container-fluid">
+
+	        <!-- messages:-->
+    <div class="message row">
+	        	
+        <?php 
+      
+             if(empty($messageSCS)==false)
+             	echo '<p style="color:red; text-align:center;">'.$messageSCS.'</p>'; 
+        ?>
+	</div>		
+
+	<div class="modifierM row">
+		<form action="supprimer.php?idchat=<?=$idchat?>&messageS=<?=$messageS?>&type=<?=$type?>" method="POST">
+			<h2 id="h3S" class="col-xs-12 modifierH textCenter" style="background-color:#FF0000; ">Supprimer vorte annonce</h2>
+        <div class="row" >
+			<div class="col-md-2"></div>
+
+			<div class="col-xs-12 col-md-4 labelM " style="padding-bottom: 10px; padding-top: 10px;">
+				<label for='messageR'> <strong><?=$messageS?></strong></label>	
+			</div>			
+            <div class="col-xs-12 col-md-4 dateM " style="padding-bottom: 10px; padding-top: 10px;">
+				<select name="messageR" class="form-control">
+					<option value="Oui">Oui</option>
+					<option value="Non">Non</option>
+				</select>
+	         </div>
+	        <div class="col-md-2"></div> 
+	    </div>
+	    <div class="row"  >    
+
+	         <div class="col-md-2"></div>
+	         <div class="col-xs-12 col-md-4 labelM " style="padding-bottom: 10px; padding-top: 10px;">
+				<label >Votre date de naissance : </label>
+           	 </div>
+           	 <div class="col-xs-12 col-md-4 dateM " style="padding-bottom: 10px; padding-top: 10px;">
+				<input type="date" name="dateNaissance" class="form-control">
+			 </div>	
+			 <div class="col-md-2"></div>
+        </div>
+        <div class="row ">
+			 <div class="col-xs-6"></div>
+			 <div class="col-xs-4" style=" padding-top: 10px;">
+				<input type="submit" name="supprimer" value="Supprimer" onclick="message()" class="btn btn-danger">
+			</div>
+			<div class="col-xs-2"></div>
+		</div>	
+		</form>
+	</div>
+
+
+	<!--L'endroit de publicité -->		
+	<div class="row">
+		<div class="publicite col-xs-12 " id="p2" style="margin-top: -6PX;">
+		    <h2>Publicité</h2>
+		    <marquee direction="up">
+			   <a href="<?=$publiciteDetail[0]['lien']?>" ><img src="<?=$publiciteDetail[0]['url']?>" class="img-rounded img-responsive"></a>	
+			</marquee>
+		</div>
+		<?php if($publiciteDetail[0]['url']=='null'):?>
+
+			<script >		
+		     document.getElementById("p2").style.display = "none";	
+			</script>
+			
+		<?php endif;?>
+  	</div>	
+
+
+
+	<!-- javascript-->
+	<script type="text/javascript">
+		function message()
+		{
+
+
+
+          if(confirm("Voulez-vous vraiment supprimer cette annonce ?"))
+          {
+           	var v=1;
+           	 
+          }
+          if(v!==1)
+          {
+          	document.write("Vous avez renoncé à supprimer votre annonce !");
+          	
+          	setTimeout(function() {window.location.assign("index.php");},2500);             	
+          	        	
+          }	 
+		}
+        
+	</script>	        
+</div>

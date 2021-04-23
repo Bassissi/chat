@@ -1,0 +1,102 @@
+/*partie de administrateur*/
+.login
+{
+	background-image: url('../img/index.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100%;	
+	padding: 0;
+	margin: 0;
+}
+
+.formAdmin form
+{
+	background-color: ; 
+	padding-top: 5%; 
+}
+
+.formAdmin form label
+{
+  text-align: center; 
+  color: white;    
+  padding-top: 5px; 
+
+}
+
+.formAdmin h2
+{
+  text-align: center; 
+  color: white;
+  padding: 20px;
+  padding-left: 8%;  
+}
+
+.message p
+{
+	background-color: #00BFFF; 
+	color: red;
+	padding: 10px;
+	text-align: center; 
+
+}
+.textRight
+{
+	text-align: right; 
+}
+.textLeft
+{
+	text-align: left; 
+}
+.margin0
+{
+	margin-right: 0; 
+	margin-left: 0;
+}
+
+main
+{
+	font-family: 'Noto Sans', sans-serif;
+  
+
+}
+main h3, main h2, main h1, .titre
+	{
+
+		font-family: 'Oswald', sans-serif;
+		color: #8B0000;
+
+	 
+	}
+main h1
+	{
+		font-size: 24px;
+	}
+main h2
+	{
+		font-size: 20px;
+	}
+
+main h3
+	{
+		font-size: 18px;
+	}
+main p, main textarea
+	{
+		font-size: 14px; 
+
+	}
+.rowFormulair
+{
+	padding-bottom: 10px; 
+}
+
+@media (max-width: 766px)
+{
+		
+	.textRight
+	{
+		text-align: left; 
+	}		
+
+}
+/*OK*/

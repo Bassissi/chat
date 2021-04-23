@@ -1,0 +1,114 @@
+
+<?php 
+/*include 'config/config.php'; 
+include 'annonce_class.php';*/
+$chatTitres=Annonce::chatTitre(); 
+
+
+
+
+  ?>
+
+
+
+
+<STYLE>
+#ejs_scroll_relativ {border: 1px solid #AAA; border-radius: 5px}
+/*format du texte*/
+.ejs_scroll {font-size:20px;font-family:Verdana;color:green;text-decoration:none; }
+/*format du lien*/
+.ejs_scroll:hover {font-size:20px;font-family:Verdana;color:#fff;text-decoration:underline}
+</STYLE>
+<center>
+<script language="JavaScript1.2">
+/*
+Source :  http://www.editeurjavascript.com
+ Adaptation : http://www.outils-web.com
+ */
+/*dimensions de la box*/
+ejs_scroll_largeur = 800;
+ejs_scroll_hauteur = 100;
+/*couleur du fond de la box*/
+ejs_scroll_bgcolor = 'black';
+/* chemin de l'image de fond */
+ejs_scroll_background = "";
+/* temps en secondes */
+ejs_scroll_pause_seconde = 7;
+
+ejs_scroll_message = new Array;
+/* placez vos liens et messages ici*/
+<?php foreach($chatTitres as $key => $value):?>
+
+
+ 	
+ 	<?php 
+		               
+		              
+
+			             if($value['sex']=='femelle' && $value['type']=='perdu') 
+			             {
+			             	$name='chatte perdue'; 
+			             }
+
+			             if($value['sex']=='male' && $value['type']=='perdu') 
+			             {
+			             	$name='chat perdu'; 
+			             }
+			             if($value['sex']=='femelle' && $value['type']=='trouve') 
+			             {
+			             	$name='chatte trouvée'; 
+			             }	             
+			             if($value['sex']=='male' && $value['type']=='trouve') 
+			             {
+			             	$name='chat trouvé'; 
+			             }             
+	                    $petiteD=$value['name'].', '.$name.' le '.$value['datePT'].' au '.$value['arrondissement']; 
+	?>
+	ejs_scroll_message['<?=$key?>']='<a href="detail.php?idchat=<?=$value['idchat']?>&type=<?=$value['type']?>" CLASS=ejs_scroll><?=$petiteD?></a>';
+
+<?php endforeach;?>
+function d(texte)
+	{document.write(texte);}
+	d('<DIV ID=ejs_scroll_relativ STYLE="position:relative;width:'+ejs_scroll_largeur+';height:'+ejs_scroll_hauteur+';background-color:'+ejs_scroll_bgcolor+';background-image:url('+ejs_scroll_background+')">');
+	d('<DIV ID=ejs_scroll_cadre STYLE="position:relative;width:'+(ejs_scroll_largeur-8)+';height:'+(ejs_scroll_hauteur-8)+';top:4;left:4;clip:rect(0 '+(ejs_scroll_largeur-8)+' '+(ejs_scroll_hauteur-8)+' 0)">');
+	d('<div id=ejs_scroller_1 style="position:relative;width:'+(ejs_scroll_largeur-8)+';left:0;top:0;" CLASS=ejs_scroll>'+ejs_scroll_message[0]+'</DIV>');
+	d('<div id=ejs_scroller_2 style="position:relative;width:'+(ejs_scroll_largeur-8)+';left:0;top:'+ejs_scroll_hauteur+';" CLASS=ejs_scroll>'+ejs_scroll_message[1]+'</DIV>');
+d('</DIV></DIV>');
+
+ejs_scroll_mode =1;
+ejs_scroll_actuel = 0;
+/* NE PAS MODIFIER*/
+function ejs_scroll_start()
+	{if(ejs_scroll_mode == 1)
+		{ejs_scroller_haut = "ejs_scroller_1";
+		ejs_scroller_bas = "ejs_scroller_2";
+		ejs_scroll_mode = 0;}
+	else
+		{ejs_scroller_bas = "ejs_scroller_1";
+		ejs_scroller_haut = "ejs_scroller_2";
+		ejs_scroll_mode = 1;}
+	ejs_scroll_nb_message = ejs_scroll_message.length-1;
+	if(ejs_scroll_actuel == ejs_scroll_nb_message)
+		ejs_scroll_suivant = 0;
+	else
+		ejs_scroll_suivant = ejs_scroll_actuel+1;
+	if(document.getElementById)
+		document.getElementById(ejs_scroller_bas).innerHTML = ejs_scroll_message[ejs_scroll_suivant];
+	ejs_scroll_top = 0;
+	if(document.getElementById)
+		setTimeout("ejs_scroll_action()",ejs_scroll_pause_seconde*1000)	}
+function ejs_scroll_action()
+	{ejs_scroll_top -= 1;
+	document.getElementById(ejs_scroller_haut).style.top = ejs_scroll_top;
+	document.getElementById(ejs_scroller_bas).style.top = ejs_scroll_top+ejs_scroll_hauteur;
+	if((ejs_scroll_top+ejs_scroll_hauteur) > 0)
+		setTimeout("ejs_scroll_action()",10)
+	else
+		ejs_scroll_stop()}
+function ejs_scroll_stop()
+	{ejs_scroll_actuel = ejs_scroll_suivant;
+	ejs_scroll_start()}
+window.onload = ejs_scroll_start;
+</SCRIPT>
+</center>
+
